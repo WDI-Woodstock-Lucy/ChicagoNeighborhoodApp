@@ -9,6 +9,7 @@
 
 
 
+
 <%= form_tag('/users', method: :post) do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %>
@@ -16,6 +17,7 @@
   <%= f.password_field :password_digest %>
   <%= f.submit %>
 <% end %>
+
 
 <%= form_tag('/sessions', method: :post) do |f| %>
   <%= f.label :username %>
