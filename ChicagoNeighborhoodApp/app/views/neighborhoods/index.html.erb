@@ -10,21 +10,6 @@
 
 
 
-<%= form_tag('/users', method: :post) do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password_digest %>
-  <%= f.password_field :password_digest %>
-  <%= f.submit %>
-<% end %>
 
-
-<%= form_tag('/sessions', method: :post) do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password_digest %>
-  <%= f.password_field :password_digest %>
-  <%= f.submit %>
-<% end %>
 
 <!-- js to fetch from yelp/4sqr using the hidden neighborhood name -->

@@ -14,7 +14,9 @@ class NeighborhoodsController < ApplicationController
   	#RANDOM RESTAURANT SUGGESTIONS
   	location_name = @neighborhood.zipcode
   	parameters = { term: "restaurant"}
-    @restaurants = Yelp.client.search(location_name, parameters)
+    results = Yelp.client.search(location_name, parameters)
+    restaurants = results.businesses
+    @restaurant = restaurants.sample
   end
 
 
