@@ -1,9 +1,9 @@
 <h1>Neighborhoods</h1>
 
 
-<%= form_tag('/neighborhoods/:id', method: :get) do %>
+<%= form_tag('/neighborhoods/show', method: :get) do %>
 <!-- hidden input w/neighbhorhood name -->
-<%= select_tag :id, options_for_select([['Wicker Park', 1], ['Logan Square', 2]]) %>
+<%= select_tag :neighborhood_id, options_for_select([['Wicker Park', 1], ['Logan Square', 2]]) %>
 <%= submit_tag %>
 <% end %>
 
