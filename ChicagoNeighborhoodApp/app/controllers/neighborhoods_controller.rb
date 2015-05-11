@@ -3,7 +3,7 @@ class NeighborhoodsController < ApplicationController
 
 
   def index
-   
+
   end
 
   def show
@@ -17,6 +17,9 @@ class NeighborhoodsController < ApplicationController
     @restaurants = Yelp.client.search(location_name, parameters)
   end
 
+  def create
+    User.create
+  end
 
 
 end
