@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/name' => 'neighborhoods#name'
 
+  post '/users' => 'neighborhoods#user'
+
   resources :neighborhoods, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
