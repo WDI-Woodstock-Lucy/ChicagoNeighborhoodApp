@@ -1,5 +1,7 @@
 require 'yelp'
 
+
+#Creates a Global Client to access Yelp Searches (***client.search(params)***)
 Yelp.client.configure do |config|
   config.consumer_key = "ssv6jSv0meS19vC_Cw85Ag"
   config.consumer_secret = "vO3ndashYEanbDNFsfuFWjTdk1U"
