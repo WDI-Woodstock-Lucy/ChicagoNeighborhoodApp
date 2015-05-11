@@ -24,4 +24,16 @@ ActiveRecord::Schema.define(version: 20150511175354) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "review_body"
+    t.integer  "rating"
+    t.integer  "zip"
+    t.text     "neighborhood_name"
+    t.text     "business_name"
+    t.integer  "business_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
 end
