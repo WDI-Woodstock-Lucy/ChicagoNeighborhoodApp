@@ -61,3 +61,4 @@ The user can search by term for activities of interest.
 
 Home Wireframe
 ![home_wireframe](/home_wireframe.png)
+![results_page](/Results_page.png)
