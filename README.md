@@ -58,3 +58,6 @@ The user can log out.
 The user can search by neighborhood or zip code in the city of Chicago.
 The user can toggle by time of day to zone in on types of services available.
 The user can search by term for activities of interest.
+
+Home Wireframe
+![home_wireframe](/home_wireframe.png)
