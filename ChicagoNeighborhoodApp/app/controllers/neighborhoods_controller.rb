@@ -1,9 +1,7 @@
 class NeighborhoodsController < ApplicationController
 
-
-
   def index
-
+    @user = User.new
   end
 
   def show

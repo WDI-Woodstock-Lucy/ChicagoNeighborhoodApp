@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
-  #Neightborhood Routes (Main)
+  #Neighborhood Routes (Main)
   root 'neighborhoods#index'
 
   get '/name' => 'neighborhoods#name'
 
-  post '/users' => 'neighborhoods#create'
+  post '/users' => 'users#create'
+
+  post 'sessions' => 'sessions#create'
 
   resources :neighborhoods, only: [:index, :show, :create]
 

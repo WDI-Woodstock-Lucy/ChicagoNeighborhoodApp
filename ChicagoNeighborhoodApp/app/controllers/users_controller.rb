@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     end
 
     def create
-      user = User.create (user_params)
-      redirect_to "/users/#{user_id}"
+      user = User.create(user_params)
+      redirect_to '/'
     end
 
     def edit
@@ -39,8 +39,7 @@ class UsersController < ApplicationController
     end
 
     private
-
     def user_params
-      params.require(:user).permit(:primary_key_id, :username, :password_digest, :email)
+      params.require(:user).permit(:password, :email)
     end
 end
