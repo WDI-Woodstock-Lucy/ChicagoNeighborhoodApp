@@ -20,15 +20,28 @@ class NeighborhoodsController < ApplicationController
     parameters = { term: "bar"}
     results = Yelp.client.search(location_name, parameters)
     @bars = results.businesses.sample(3)
-    
+
   end
 
   def create
     User.create
   end
 
-  def create
-    User.create
+  def profile
+    #Locate profile user
+    profile_user = params[:username, :password]
+    @user = User.find(username, password)
+
+    #Get profile information (saved attractions lists and list of submitted reviews)
+    saved_info = params[:favorite_id]
+    @favorite = Favorite.find(favorite_id)
+
+    @review = Review.find(params(busines))
+
+    #Make changes to profile (add, subtract saved)
+
+    profile_use
+    profile_location = User.
   end
 
 
