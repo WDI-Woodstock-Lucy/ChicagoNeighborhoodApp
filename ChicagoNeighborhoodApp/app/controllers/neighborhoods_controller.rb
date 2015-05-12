@@ -1,5 +1,6 @@
 class NeighborhoodsController < ApplicationController
 
+
   def index
     @user = User.new
   end
@@ -50,17 +51,11 @@ class NeighborhoodsController < ApplicationController
 
     @review = Review.find((busines))
 
-<<<<<<< HEAD
+
+    #Make changes to profile (add, subtract saved)
+
     profile_use
     profile_location = User
   end
 
-=======
-
-  #   #Make changes to profile (add, subtract saved)
-
-  #   profile_use
-  #   profile_location = User.
-  # end
->>>>>>> 102900506cd86316f4c31186ac1061d8647b4828
 end

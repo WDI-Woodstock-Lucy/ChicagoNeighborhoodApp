@@ -5,12 +5,16 @@ class ApplicationController < ActionController::Base
 
   def current_user
     if session[:user_id]
-      @current_user ||= User.find(session[:user_d])
+      @current_user ||= User.find(session[:user_id])
     end
   end
 
   def authenticate!
-    redirect_to '/' unless currrent_user
+    redirect_to '/' unless current_user
   end
-  
+
+  def admin_authenticate!
+    redirect_to '/' unless (current_user && current_user.is_admin)
+  end
+
 end
