@@ -1,3 +1,92 @@
 // Place all the styles related to the neighborhoods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/*====================================================
+					MAIN PAGE
+======================================================*/
+
+$primary-font: 'Lato', sans-serif;
+$secondary-font: 'Grand Hotel', serif;
+
+body#main-body {
+	background-image: image-url("main-bkg.jpg");
+	background-size: cover;
+	h1 {
+		font-family: $primary-font;
+		font-size: 60pt;
+		text-align: center;
+		color: white;
+		font-weight: 900;
+		margin-top: 125px;
+	}
+	h3 {
+		font-family: $primary-font;
+		font-size: 12pt;
+		text-align: center;
+		padding: 10px;
+		color: white;
+		font-weight: 400;
+		border: 1px solid white;
+		width: 100px;
+		position: fixed;
+		top: 25px;
+		right: 25px;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	h3:hover {
+		background-color: white;
+		color: #2c2c2c;
+		transition: .3s;
+	}
+	form {
+		display: block;
+		width: 30%;
+		margin: 0 auto;
+		overflow: auto;
+	}
+	select {
+		font-family: $primary-font;
+		font-size: 20pt;
+		text-align: right;
+		color: white;
+		font-weight: 700;
+		border: none;
+		border-radius: 5px;
+		background: rgba(0,0,0,.7);
+		width: 60%;
+		padding: 0px;
+		height: 40px;
+		outline: none;
+		display: block;
+		float: left;
+		margin-right: 5%;
+	}
+	input[type="submit"]{
+		font-family: $primary-font;
+		font-size: 12pt;
+		text-align: center;
+		color: #2c2c2c;
+		font-weight: 400;
+		border: none;
+		border-radius: 5px;
+		background: rgba(255,255,255,.9);
+		width: 35%;
+		padding: 0px;
+		height: 40px;
+		outline: none;
+		display: block;
+		float: left;
+		cursor: pointer;
+		outline: none;
+	}
+	input[type="submit"]:hover{
+		background-color: green;
+		color: white;
+		transition: .3s;
+	}
+}
+
