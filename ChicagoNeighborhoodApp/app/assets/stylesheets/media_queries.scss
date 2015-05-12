@@ -89,7 +89,26 @@ $primary-font: 'Lato', sans-serif;
 	// INDEX PAGE 
 	// ==================================
 	body#main-body{
-		
+		h1 {
+			font-size: 36pt;
+		}
+		select{
+			float: none;
+			margin: 10px auto;
+			width: 80%;
+			height: 45px;
+		}
+		input[type="submit"]{
+			float: none;
+			margin: 0 auto;
+			width: 55%;
+		}
+		form#new_user{
+			width: 100%;
+			.sign-up-field{
+				width: 45%;
+			}
+		}
 	}
 	
 

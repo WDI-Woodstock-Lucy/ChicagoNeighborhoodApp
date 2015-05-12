@@ -42,20 +42,14 @@ class NeighborhoodsController < ApplicationController
     #Locate profile user
     @user = User.find(params[:id])
 
-    #Get profile information (saved attractions lists and list of submitted reviews)
-    favorites = @user.favorites
-
-
-    @favorites = Favorites.all(:username)
-    Favorites.all =
-
-    @review = Review.find((busines))
-
-
     #Make changes to profile (add, subtract saved)
+    email_change = @user.find(id).edit(:email)
+    password_change = @user.find(id).edit(:password)
 
-    profile_use
-    profile_location = User
+    #Review info - to create, to get all previous reviews and to post
+    all_reviews = @review.index
+    new_review = @review.create
+    delete_review = @review.destroy
+
   end
-
 end
