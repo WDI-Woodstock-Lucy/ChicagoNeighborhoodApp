@@ -51,9 +51,9 @@ class NeighborhoodsController < ApplicationController
     @review = Review.find((busines))
 
 
-  #   #Make changes to profile (add, subtract saved)
+    #Make changes to profile (add, subtract saved)
 
-  #   profile_use
-  #   profile_location = User.
-  # end
+    profile_use
+    profile_location = User
+  end
 end

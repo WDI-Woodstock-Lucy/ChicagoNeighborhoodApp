@@ -27,9 +27,9 @@
 
 	<%= form_for @user do |f| %>
 	  <%= f.label :email %>
-	  <%= f.text_field :email, class: 'sign-up-field'  %>
+	  <%= f.text_field :email, class: 'sign-up-field', id: 'sign-up-email'  %>
 	  <%= f.label :password %>
-	  <%= f.password_field :password, class: 'sign-up-field'  %>
+	  <%= f.password_field :password, class: 'sign-up-field', id: 'sign-up-password'  %>
 	  <%= f.submit %>
 	<% end %>
 
@@ -54,7 +54,6 @@
 
 			});
 
-
 			// RESPONSIVE SIGN IN FORM
 			$('#nav-sign-in-form').hide();
 
@@ -62,6 +61,18 @@
 				evt.preventDefault();
 				$('#nav-sign-in-form').slideToggle("slow");
 			});
+
+			//FORM VALIDATION
+
+			$('input[name="user[password]"]').on('keyup', function(evt){
+				evt.preventDefault();
+				var emailField = $(this);
+				if (emailField.val().length >= 6){
+					emailField.css("background-color", "rgba(89,193,114,.5)");
+				} else {
+					emailField.css("background-color", "rgba(255,1,1,.5)");
+				}
+			});	
 
 		})		
 
