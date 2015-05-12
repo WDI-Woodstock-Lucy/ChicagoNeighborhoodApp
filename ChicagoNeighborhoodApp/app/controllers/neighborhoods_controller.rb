@@ -50,8 +50,7 @@ class NeighborhoodsController < ApplicationController
     #Make changes to profile (add, subtract saved)
 
     profile_use
-    profile_location = User.
+    profile_location = User
   end
-
 
 end
