@@ -34,6 +34,7 @@ class NeighborhoodsController < ApplicationController
 
     #Get profile information (saved attractions lists and list of submitted reviews)
     saved_info = params[:favorite_id]
+
     @favorite = Favorite.find(favorite_id)
 
     @review = Review.find(params(busines))
@@ -43,6 +44,4 @@ class NeighborhoodsController < ApplicationController
     profile_use
     profile_location = User.
   end
-
-
 end
