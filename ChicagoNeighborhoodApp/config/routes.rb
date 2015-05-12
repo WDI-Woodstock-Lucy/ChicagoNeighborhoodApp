@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   #Neighborhood Routes (Main)
   root 'neighborhoods#index'
 
+  get '/admin' => 'admin#home'
+
   get '/name' => 'neighborhoods#name'
 
   post '/users' => 'users#create'

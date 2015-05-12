@@ -36,6 +36,7 @@ class NeighborhoodsController < ApplicationController
     User.create
   end
 
+
   def profile
     #Locate profile user
     @user = User.find(params[:id])
