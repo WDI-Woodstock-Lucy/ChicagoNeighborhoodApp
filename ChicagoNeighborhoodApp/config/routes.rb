@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post 'sessions' => 'sessions#create'
 
+  get '/search/:id' => 'neighborhoods#search'
+
   resources :neighborhoods, only: [:index, :show, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
