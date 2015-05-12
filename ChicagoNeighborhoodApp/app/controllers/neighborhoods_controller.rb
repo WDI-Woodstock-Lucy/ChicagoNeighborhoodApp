@@ -1,5 +1,6 @@
 class NeighborhoodsController < ApplicationController
 
+
   def index
     @user = User.new
   end
@@ -40,7 +41,7 @@ class NeighborhoodsController < ApplicationController
   def profile
     #Locate profile user
     @user = User.find(params[:id])
-    
+
     #Make changes to profile (add, subtract saved)
     email_change = @user.find(id).edit(:email)
     password_change = @user.find(id).edit(:password)

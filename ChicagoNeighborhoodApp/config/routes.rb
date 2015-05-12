@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/byebug_me' => 'neighborhoods#byebug_me'
+
   #Neighborhood Routes (Main)
   root 'neighborhoods#index'
 
