@@ -40,16 +40,17 @@ class NeighborhoodsController < ApplicationController
 
   def profile
     #Locate profile user
-    @user = User.find(params[:id])
+    authenticate!
+    @user = current_user
 
     #Make changes to profile (add, subtract saved)
-    email_change = @user.find(id).edit(:email)
-    password_change = @user.find(id).edit(:password)
-
-    #Review info - to create, to get all previous reviews and to post
-    all_reviews = @review.index
-    new_review = @review.create
-    delete_review = @review.destroy
+    # email_change = @user.find(id).edit(:email)
+    # password_change = @user.find(id).edit(:password)
+    #
+    # #Review info - to create, to get all previous reviews and to post
+    # all_reviews = @review.index
+    # new_review = @review.create
+    # delete_review = @review.destroy
 
   end
 end

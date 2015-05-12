@@ -12,11 +12,6 @@ class UsersController < ApplicationController
       redirect_to '/'
     end
 
-    def edit
-      user = User.create(user_params)
-      redirect_to "/users/#{user_id}"
-    end
-
     def update
       user = User.find(params[:id])
       user.update!(user_params)
