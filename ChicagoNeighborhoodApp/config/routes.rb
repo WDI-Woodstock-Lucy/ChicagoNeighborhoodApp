@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
-  #Neightborhood Routes (Main)
+  #Neighborhood Routes (Main)
   root 'neighborhoods#index'
 
   get '/name' => 'neighborhoods#name'
 
-  post '/users' => 'neighborhoods#user'
+  post '/users' => 'users#create'
 
-  resources :neighborhoods, only: [:index, :show]
+  post 'sessions' => 'sessions#create'
+
+  resources :neighborhoods, only: [:index, :show, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
