@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   #Neighborhood Routes (Main)
   root 'neighborhoods#index'
 
-  get '/admin' => 'admin#home'
-
   get '/name' => 'neighborhoods#name'
 
   post '/users' => 'users#create'
@@ -12,6 +10,17 @@ Rails.application.routes.draw do
   post 'sessions' => 'sessions#create'
 
   get '/search/:id' => 'neighborhoods#search'
+
+#Profile routes (to get profile, update information)
+  get '/users/:id' => 'users#profile'
+
+  update '/users/:id' => 'users#update'
+
+  get '/reviews' => 'reviews#index'
+
+  post '/reviews' => 'reviews#create'
+
+  delete '/reviews/:id' => 'reviews#destroy'
 
   resources :neighborhoods, only: [:index, :show, :create]
 
