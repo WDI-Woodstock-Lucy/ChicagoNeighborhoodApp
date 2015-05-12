@@ -15,8 +15,12 @@ class NeighborhoodsController < ApplicationController
   	location_name = @neighborhood.zipcode
   	parameters = { term: "restaurant"}
     results = Yelp.client.search(location_name, parameters)
-    restaurants = results.businesses
-    @restaurant = restaurants.sample
+    @restaurants = results.businesses.sample(3)
+    
+  end
+
+  def create
+    User.create
   end
 
 

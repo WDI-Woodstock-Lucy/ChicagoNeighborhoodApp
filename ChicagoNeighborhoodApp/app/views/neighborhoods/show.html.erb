@@ -1,4 +1,46 @@
+<style type="text/css">
+
+	ul{
+		padding: 0;
+		width: 100%;
+		display: block;
+	}
+
+	li{
+		float: left;
+		width: 30%;
+		text-align: center;
+	}
+
+	li img{
+		display: block;
+		width: 100px;
+		margin: 0 auto;
+	}
+
+</style>
+
 <h1><%= @neighborhood.name %></h1>
 <h2><%= @neighborhood.description%></h2>
 
-<%= @restaurant.name %>
+<ul>
+
+	<li>
+		<h2><%= @restaurants[0].name %></h2>
+		<h2><%= @restaurants[0].snippet_text %></h2>
+		<img src=<%= @restaurants[0].rating_img_url_small %>>
+	</li>
+
+	<li>
+		<h2><%= @restaurants[1].name %></h2>
+		<img src=<%= @restaurants[1].image_url %>>
+		<img src=<%= @restaurants[1].rating_img_url_small %>>
+	</li>
+
+	<li>
+		<h2><%= @restaurants[2].name %></h2>
+		<img src=<%= @restaurants[2].image_url %>>
+		<img src=<%= @restaurants[2].rating_img_url_small %>>
+	</li>
+
+</ul>
