@@ -1,76 +1,195 @@
-<style type="text/css">
+
+<body id="show-body">
+	<style type="text/css">
 
 
 
 
 
 
-	ul{
-		padding: 0;
-		width: 100%;
-		display: block;
-		overflow: auto;
-	}
+		ul{
+			padding: 0;
+			width: 100%;
+			display: block;
+			overflow: auto;
+		}
 
-	li{
-		float: left;
-		width: 30%;
-		text-align: center;
-	}
+		li{
+			float: left;
+			width: 25%;
+			text-align: center;
+		}
 
-	li img{
-		display: block;
-		width: 100px;
-		margin: 0 auto;
-	}
+		li img{
+			display: block;
+			width: 100px;
+			margin: 0 auto;
+		}
 
-</style>
+	</style>
 
-<h1><%= @neighborhood.name %></h1>
-<h2><%= @neighborhood.description%></h2>
+	<h1><%= @neighborhood.name %></h1>
+	<h2><%= @neighborhood.description%></h2>
 
-<!-- SEARCH BAR -->
+	<!-- SEARCH BAR -->
+	<form>
+		<input type="text" id="search-field">
+		<input type="submit" id="search-submit">
 
-<%= form_tag("/search/#{@neighborhood.id}", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag :term %>
-  <%= submit_tag("Search") %>
-<% end %>
+	</form>
 
+	<ul id="search-result">
 
-<!-- RESTAURANTS -->
-<ul>
-
-	<li>
-		<h2><%= @restaurants[0].name %></h2>
-		<h2><%= @restaurants[0].snippet_text %></h2>
-		<img src=<%= @restaurants[0].rating_img_url_small %>>
-	</li>
-
-	<li>
-		<h2><%= @restaurants[1].name %></h2>
-		<img src=<%= @restaurants[1].image_url %>>
-		<img src=<%= @restaurants[1].rating_img_url_small %>>
-	</li>
-
-</ul>
+	</ul>
+	
 
 
+	<!-- RESTAURANTS -->
+	<ul id="restaurant-suggestions">
 
-<!-- BARS -->
-<ul>
+		<li>
+			<h2><%= @restaurants[0].name %></h2>
+			<h2><%= @restaurants[0].snippet_text %></h2>
+			<img src=<%= @restaurants[0].rating_img_url_small %>>
+		</li>
 
-	<li>
-		<h2><%= @bars[0].name %></h2>
-		<h2><%= @bars[0].snippet_text %></h2>
-		<img src=<%= @bars[0].rating_img_url_small %>>
-	</li>
+		<li>
+			<h2><%= @restaurants[1].name %></h2>
+			<img src=<%= @restaurants[1].image_url %>>
+			<img src=<%= @restaurants[1].rating_img_url_small %>>
+		</li>
 
-	<li>
-		<h2><%= @bars[1].name %></h2>
-		<img src=<%= @bars[1].image_url %>>
-		<img src=<%= @bars[1].rating_img_url_small %>>
-	</li>
+	</ul>
 
 
-</ul>
+
+	<!-- BARS -->
+	<ul id="bar-suggestions">
+
+		<li>
+			<h2><%= @bars[0].name %></h2>
+			<h2><%= @bars[0].location.neighborhoods %></h2>
+			<img src=<%= @bars[0].rating_img_url_small %>>
+		</li>
+
+		<li>
+			<h2><%= @bars[1].name %></h2>
+			<img src=<%= @bars[1].image_url %>>
+			<img src=<%= @bars[1].rating_img_url_small %>>
+		</li>
+
+
+	</ul>
+
+
+	<script type="text/javascript">
+
+		$(document).ready(function(evt){
+
+
+			//======================================================
+			//		FOUR SQUARE SUGGESTION LIST
+			//======================================================
+
+			function fourSquareSuggestions(){
+
+				var clientKey = 'PFZGPZCMEIYOB1CLDVEFJXN2BBQP3CTLPDOJEMR1JPQ2A1TL';
+				var clientSecret = 'WRENZBLZL5DQK3NEOGALJ1K4J0YQRE4EXHGYHDWJNAG0QEVC';
+				var location = <%= @neighborhood.zipcode %>
+				function randNum(){
+					return Math.floor(Math.random() * 10) + 1;
+				}
+
+				//=================RESTAURANTS
+				$.ajax({
+					method: 'get',
+					url: 'https://api.foursquare.com/v2/venues/search?client_id='+clientKey+'&client_secret='+clientSecret+'&v=20130815&near='+location+'&query=restaurant&limit=10',
+					dataType: 'json',
+					success: function(data){
+						var results = data.response.venues;
+						var result1 = results[randNum()];
+						var result2 = results[randNum()];
+						if (!result1){
+							result1 = results[randNum()];
+						} else if (!result2){
+							result2 = results[randNum()];
+						} else if (result1.name == result2.name){
+							result2 = results[randNum()];
+						};
+						var listItem = $('<li>').html('<h2>'+result1.name+'</h2>');
+						$('#restaurant-suggestions').append(listItem);
+						var listItem = $('<li>').html('<h2>'+result2.name+'</h2>');
+						$('#restaurant-suggestions').append(listItem);	
+
+					}
+				})
+				//=================BARS
+				$.ajax({
+					method: 'get',
+					url: 'https://api.foursquare.com/v2/venues/search?client_id='+clientKey+'&client_secret='+clientSecret+'&v=20130815&near='+location+'&query=bars&limit=10',
+					dataType: 'json',
+					success: function(data){
+						var results = data.response.venues;
+						var result1 = results[randNum()];
+						var result2 = results[randNum()];
+						if (!result1){
+							result1 = results[randNum()];
+						} else if (!result2){
+							result2 = results[randNum()];
+						} else if (result1.name == result2.name){
+							result2 = results[randNum()];
+						};
+						var listItem = $('<li>').html('<h2>'+result1.name+'</h2>');
+						$('#bar-suggestions').append(listItem);
+						var listItem = $('<li>').html('<h2>'+result2.name+'</h2>');
+						$('#bar-suggestions').append(listItem);	
+
+					}
+				})
+			}
+
+
+			//======================================================
+			//		FOUR SQUARE SEARCH
+			//======================================================
+
+			$('#search-submit').click(function(evt){
+
+				evt.preventDefault();
+
+				var searchTerm = $('#search-field').val();
+				var clientKey = 'PFZGPZCMEIYOB1CLDVEFJXN2BBQP3CTLPDOJEMR1JPQ2A1TL';
+				var clientSecret = 'WRENZBLZL5DQK3NEOGALJ1K4J0YQRE4EXHGYHDWJNAG0QEVC';
+				var location = <%= @neighborhood.zipcode %>
+				$.ajax({
+					method: 'get',
+					url: 'https://api.foursquare.com/v2/venues/search?client_id='+clientKey+'&client_secret='+clientSecret+'&v=20130815&near='+location+'&query='+searchTerm+'&limit=1',
+					dataType: 'json',
+					success: function(data){
+						var results = data.response.venues;
+						var result1 = results[0];
+						var listItem = $('<li>').html('<h2>'+result1.name+'</h2>')
+						$('#search-result').html(listItem.html());
+
+					}
+				});
+
+			});
+
+
+
+			//======AJAX CALLS FOR RESTAURANT / BAR SUGGESTIONS
+			fourSquareSuggestions();
+
+		})
+
+
+
+
+
+
+	</script>
+
+
+
+</body>
