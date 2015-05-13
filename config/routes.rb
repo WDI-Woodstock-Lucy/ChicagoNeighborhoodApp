@@ -7,12 +7,17 @@ Rails.application.routes.draw do
 
 
 
+
   post '/users' => 'users#create'
 
   post 'sessions' => 'sessions#create'
   delete 'sessions' => 'sessions#destroy'
 
   get '/search/:id' => 'neighborhoods#search'
+
+  get '/admin' => 'admin#home'
+  post '/admin' => 'admin#post'
+  delete '/admin' => 'admin#destroy'
 
 #Profile routes (to get profile, update information)
   get '/profile' => 'users#profile'
@@ -21,7 +26,7 @@ Rails.application.routes.draw do
 
   get '/users/:id' => 'users#profile'
 
-  #update '/users' => '#update'
+  resources :users, only: [:update, :create]
 
   get '/reviews' => 'reviews#index'
 
@@ -29,7 +34,10 @@ Rails.application.routes.draw do
 
   delete '/reviews/:id' => 'reviews#destroy'
 
-  resources :neighborhoods, only: [:index, :show, :create]
+  resources :neighborhoods, except: [:edit, :update]
+  get '/neighborhoods/:id/edit' => 'admin#home'
+  patch '/neighborhoods/:id' => 'admin#update'
+  put '/neighborhoods/:id' => 'admin#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
