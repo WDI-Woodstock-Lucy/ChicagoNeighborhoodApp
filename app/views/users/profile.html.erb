@@ -12,7 +12,7 @@
   </nav> -->
 
 
-  <p id="edit-form">Edit Email or Password</p>
+  <p id="edit-form">Update your email or password</p>
 
   <%= form_for @user do |f| %>
     <%= f.label :email %>
@@ -23,14 +23,31 @@
   <% end %>
 
   <script type="text/javascript">
+
     $(document).ready(function(){
       $('#current_user').hide();
+
+      $(':submit').prop("disabled", "true");
+
+
+      // Line to renable user button
+      $('#user_password').on('focusout', function() {
+
+        $(':submit').prop("disabled", "")
+
+      });
+
+
+
       $('#edit-form').on("click", function(evt){
         evt.preventDefault();
         $('#current_user').slideToggle("slow");
+
       });
 
       $('')
+
+      // line to  disable user button until password is filled out
 
       // $('input[name="user[password]"]').on('keyup', function(evt){
       //   evt.preventDefault();
