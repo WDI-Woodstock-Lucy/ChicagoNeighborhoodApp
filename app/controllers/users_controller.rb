@@ -31,6 +31,7 @@ class UsersController < ApplicationController
       #Locate profile user
       authenticate!
       @user = current_user
+      @newuser = User.new
       @useredit = User.new
     end
 

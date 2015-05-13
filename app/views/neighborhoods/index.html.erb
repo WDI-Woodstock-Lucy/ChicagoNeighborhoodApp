@@ -1,14 +1,7 @@
 <body id="main-body">
 
 
-	<nav id="main-nav">
-		<%= form_tag('/sessions', method: :post, :id => 'nav-sign-in-form') do |f| %>
-		  <%= text_field_tag :email, nil, placeholder: "Email...", class: 'nav-sign-in-field' %>
-		  <%= password_field_tag :password, nil, placeholder: "Password...", class: 'nav-sign-in-field'%>
-		  <%= submit_tag 'Sign-In', :id => 'sign-in-button'%>
-		<% end %>
-		<img src="http://www.londonsyonpark.com/images/icon-mobile-nav.png" id="menu-icon">
-	</nav>
+	
 
 
 
@@ -21,25 +14,19 @@
 	<%= submit_tag 'Explore', :id=> "neighborhood-button"%>
 	<% end %>
 
-
 	<!-- SIGN UP FORM -->
 	<p id="sign-up-cta">SIGN-UP HERE</p>
 
-	<%= form_for @user do |f| %>
+	<%= form_for @newuser do |f| %>
 	  <%= f.label :email %>
 	  <%= f.text_field :email, class: 'sign-up-field', id: 'sign-up-email'  %>
 	  <%= f.label :password %>
 	  <%= f.password_field :password, class: 'sign-up-field', id: 'sign-up-password'  %>
-	  <%= f.submit %>
+	  <%= f.submit "Sign Up"%>
 	<% end %>
 
 
-	<!-- LOG IN FORM -->
-	<%= form_tag('/sessions', method: :post, :id => 'sign-in-form') do |f| %>
-	  <%= text_field_tag :email, nil, placeholder: "Email...", class: 'sign-in-field' %>
-	  <%= password_field_tag :password, nil, placeholder: "Password...", class: 'sign-in-field'%>
-	  <%= submit_tag 'Sign-In', :id => 'sign-in-button'%>
-	<% end %>
+	
 
 	<script type="text/javascript">
 
@@ -54,15 +41,7 @@
 
 			});
 
-			// RESPONSIVE SIGN IN FORM
-			$('#nav-sign-in-form').hide();
-
-			$('#menu-icon').on("click", function(evt){
-				evt.preventDefault();
-				$('#nav-sign-in-form').slideToggle("slow");
-			});
-
-			$('')
+			
 
 			//FORM VALIDATION
 

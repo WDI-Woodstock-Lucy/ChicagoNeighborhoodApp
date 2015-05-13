@@ -38,6 +38,8 @@
 
 	</form>
 
+
+
 	<ul id="search-result">
 
 	</ul>
@@ -96,8 +98,8 @@
 				var clientKey = 'PFZGPZCMEIYOB1CLDVEFJXN2BBQP3CTLPDOJEMR1JPQ2A1TL';
 				var clientSecret = 'WRENZBLZL5DQK3NEOGALJ1K4J0YQRE4EXHGYHDWJNAG0QEVC';
 				var location = <%= @neighborhood.zipcode %>
-				function randNum(){
-					return Math.floor(Math.random() * 10) + 1;
+				function randNum(num){
+					return Math.floor(Math.random() * num) + 1;
 				}
 
 				//=================RESTAURANTS
@@ -107,14 +109,14 @@
 					dataType: 'json',
 					success: function(data){
 						var results = data.response.venues;
-						var result1 = results[randNum()];
-						var result2 = results[randNum()];
+						var result1 = results[randNum(10)];
+						var result2 = results[randNum(10)];
 						if (!result1){
-							result1 = results[randNum()];
+							result1 = results[randNum(10)];
 						} else if (!result2){
-							result2 = results[randNum()];
+							result2 = results[randNum(10)];
 						} else if (result1.name == result2.name){
-							result2 = results[randNum()];
+							result2 = results[randNum(10)];
 						};
 						var listItem = $('<li>').html('<h2>'+result1.name+'</h2>');
 						$('#restaurant-suggestions').append(listItem);
@@ -130,14 +132,14 @@
 					dataType: 'json',
 					success: function(data){
 						var results = data.response.venues;
-						var result1 = results[randNum()];
-						var result2 = results[randNum()];
+						var result1 = results[randNum(10)];
+						var result2 = results[randNum(10)];
 						if (!result1){
-							result1 = results[randNum()];
+							result1 = results[randNum(10)];
 						} else if (!result2){
-							result2 = results[randNum()];
+							result2 = results[randNum(10)];
 						} else if (result1.name == result2.name){
-							result2 = results[randNum()];
+							result2 = results[randNum(10)];
 						};
 						var listItem = $('<li>').html('<h2>'+result1.name+'</h2>');
 						$('#bar-suggestions').append(listItem);
@@ -163,16 +165,32 @@
 				var location = <%= @neighborhood.zipcode %>
 				$.ajax({
 					method: 'get',
-					url: 'https://api.foursquare.com/v2/venues/search?client_id='+clientKey+'&client_secret='+clientSecret+'&v=20130815&near='+location+'&query='+searchTerm+'&limit=1',
+					url: 'https://api.foursquare.com/v2/venues/search?client_id='+clientKey+'&client_secret='+clientSecret+'&v=20130815&near='+location+'&query='+searchTerm+'&limit=5',
 					dataType: 'json',
 					success: function(data){
+						$('#search-result').empty();
 						var results = data.response.venues;
 						var result1 = results[0];
+						if (!result1){
+							result1 = results[randNum(5)];
+						}
 						var listItem = $('<li>').html('<h2>'+result1.name+'</h2>')
-						$('#search-result').html(listItem.html());
+						$('#search-result').append(listItem.html());
 
 					}
 				});
+				var hello = $.ajax({
+					method: 'get',
+					url: '/search/' + <%= @neighborhood.id %>,
+					dataType: 'json',
+					data: {term: searchTerm},
+					success: function(){
+						
+
+					}
+				});
+				console.log(hello);
+
 
 			});
 

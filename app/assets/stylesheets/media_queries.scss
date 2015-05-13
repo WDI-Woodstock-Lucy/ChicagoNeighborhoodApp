@@ -1,4 +1,9 @@
 $primary-font: 'Lato', sans-serif;
+//COLORS
+$primary-color: rgb(102,203,255);
+// $secondary-color: ;
+$tertiary-color: rgb(255,255,255);
+$accept-color: rgb(89,193,114); 
 
 // ==================================
 // 960 PIXELS
@@ -30,48 +35,65 @@ $primary-font: 'Lato', sans-serif;
 // 670 PIXELS
 // ==================================
 @media only screen and (max-width : 670px) {
+	// ==================================
+	// NAVIGATION
+	// ==================================
+	nav#nav{
+		display: block;
+		background-color: rgba(44,44,44,.9);
+		min-height: 50px;
+		position: fixed;
+		z-index: 2;
+		top: 0;
+		width: 100%;
+		h3{
+			display: none;
+		}
+		img{
+			display: block;
+			width: 35px;
+			margin: 10px 0 15px 5px;
+			cursor: pointer;
+		}
+		h2.responsive-nav{
+			display: block;
+			font-family: $primary-font;
+			font-size: 12pt;
+			text-align: center;
+			color: $tertiary-color;
+			border-top: 1px solid $tertiary-color;
+			padding: 15px 0;
+			margin: 0;
+			cursor: pointer;
+		}
+		h2.responsive-nav:hover{
+			color: $primary-color;
+			border-color: $primary-color;
+			transition: .3s;
+		}
+		form#sign-in-form{
+			width: 100%;
+			input{
+				display: block;
+				float: none;
+				margin: 0 auto 10px;
+			}
+			input.sign-in-field{
+				width: 80%;
+			}
+			input[type="submit"]{
+				margin-bottom: 50px;
+			}
+		}
+	}
+
+
 
 	// ==================================
 	// INDEX PAGE 
 	// ==================================
 	body#main-body{
 		//=====================================NAVIGATION
-		nav{
-			display: block;
-			background-color: rgba(44,44,44,.9);
-			min-height: 50px;
-			position: fixed;
-			z-index: 2;
-			top: 0;
-			width: 100%;
-			img{
-				width: 35px;
-				margin: 10px 0 0 10px;
-				cursor: pointer;
-				display: block;
-			}
-			form#nav-sign-in-form{
-				padding: 10px 0;
-			}
-			.nav-sign-in-field{
-				display: block;
-				border: none;
-				display: block;
-				border-radius: 5px;
-				height: 25px;
-				margin-right: 1%;
-				margin: 0 auto 10px;
-				padding: 5px;
-				width: 65%;
-				font-family: $primary-font;
-				font-size: 10pt;
-				outline: none;
-			}
-			input[type="submit"]{
-				display: block;
-				margin: 0 auto;
-			}
-		}
 		h1{
 			font-size: 48pt;
 		}

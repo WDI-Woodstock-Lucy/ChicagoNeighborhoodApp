@@ -16,37 +16,23 @@ $secondary-font: 'Grand Hotel', serif;
 
 //COLORS
 $primary-color: rgb(102,203,255);
-// $secondary-color: ;
+$secondary-color: rgb(203,15,41);
 $tertiary-color: rgb(255,255,255);
 $accept-color: rgb(89,193,114); 
 
 
 
-
 /*====================================================
-					MAIN PAGE
+					NAVIGATION
 ======================================================*/
-body#main-body {
-	background-image: image-url("main-bkg.jpg");
-	background-size: cover;
-	background-attachment: fixed;
-	margin: 0;
-	font-family: $primary-font;
-	//============================================NAVIGATION
-	nav{
+
+
+//=======================NO USER NAVIGATION
+nav#nav{
+	min-height: 50px;
+	width: 100%;
+	img{
 		display: none;
-	}
-	//============================================HEADER
-	h1 {
-		font-size: 60pt;
-		text-align: center;
-		color: $tertiary-color;
-		font-weight: 900;
-		margin-top: 125px;
-	}
-	input{
-		border-radius: 5px;
-		font-size: 10pt;
 	}
 	//===================TEXT FIELDS
 	input[type='text'], input[type='password']{
@@ -56,10 +42,8 @@ body#main-body {
 		height: 25px;
 		margin-right: 1%;
 		padding: 5px;
-		width: 35%;
 		outline: none;
 		z-index: 2;
-		display: block;
 	}
 	//===================SUBMIT BUTTONS
 	input[type='submit']{
@@ -75,16 +59,135 @@ body#main-body {
 		border-color: $accept-color;
 		transition: .3s  
 	}
-	//===========================================SIGN IN FORM
+	//===================CTA BUTTONS
+	h3{
+		font-family: $primary-font;
+		font-size: 12pt;
+		color: $tertiary-color;
+		float: right;
+		margin: 0 50px 0 0;
+		line-height: 50px;
+		cursor: pointer;
+	}
+	h3:hover{
+		color: $primary-color;
+		transition: .3s;
+	}
+	//===================SIGN IN FORM
 	form#sign-in-form{
 		width: 35%;
-		position: absolute;
-		top: 25px;
-		right: 25px;
+		float: right;
+		margin-top: 10px;
 		input{
 			float: left;
+			margin-right: 1%;
+		}
+		input.sign-in-field{
+			width: 35%;
+		}
+		input[type="submit"]{
+			width: 22%
 		}
 	}
+}
+
+
+
+//=======================USER SIGNED IN NAVIGATION
+nav.user-nav{
+	width: 100%;
+	background-color: rgba(0,0,0,.7);
+	min-height: 50px;
+	font-family: $primary-font;
+	//===================MY PROFILE LINK
+	h2, a{
+		font-family: $primary-font;
+		font-size: 10pt;
+		color: $tertiary-color;
+		float: left;
+		margin: 0 50px 0;
+		line-height: 50px;
+	}
+	a {
+		float: right;
+		text-decoration: none;
+		margin-right: 25px;
+	}
+	a:hover {
+		color: $primary-color;
+		transition: .3s;
+	}
+	//===================LOGO
+	h1#nav-logo{
+		font-weight: 700;
+		font-size: 14pt;
+		text-align: center;
+		color: $tertiary-color;
+		margin: 0;
+		line-height: 50px;
+		letter-spacing: 5px;
+		float: none;
+	}
+	a#nav-logo-wrapper{
+		float: none;
+	}
+	//===================SIGN OUT FORM
+	form#sign-out-form{
+		float: right;
+		width: 80px;
+		margin: 7px 30px 0 0;
+		input[type="submit"]{
+			width: 80px;
+			background: none;
+			border: 1px solid $tertiary-color;
+			color: $tertiary-color;
+			font-size: 10pt;
+			height: 35px;
+			cursor: pointer;
+			border: none;
+		}
+		input[type="submit"]:hover{
+			color: $secondary-color;
+			transition: .3s;
+		}
+	}
+
+}
+
+
+
+
+
+/*====================================================
+					MAIN PAGE
+======================================================*/
+body#main-body {
+	background-image: image-url("main-bkg.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	margin: 0;
+	font-family: $primary-font;
+	//============================================NAVIGATION
+	#nav-sign-up-cta{
+		display: none;
+	}
+	h1#nav-logo{
+		display: none;
+	}
+	//============================================HEADER
+
+	h1 {
+		font-size: 60pt;
+		text-align: center;
+		color: $tertiary-color;
+		font-weight: 900;
+		margin-top: 125px;
+	}
+	input{
+		border-radius: 5px;
+		font-size: 10pt;
+	}
+
 	//=========================================NEIGHBORHOOD SEARCH
 	form {
 		width: 30%;
@@ -140,14 +243,33 @@ body#main-body {
 			text-align: center;
 			color: $tertiary-color;
 			margin-bottom: 3px;
-			font-size: 10pt;
+			font-size: 12pt;
 		}
 		input{
 			margin: 0 auto 10px;
-		}
-		input[type="submit"]{
+			border: none;
+			background-color: rgba(255,255,255,.7);
 			display: block;
-			margin: 15px auto;
+			height: 25px;
+			padding: 5px;
+			outline: none;
+			z-index: 2;
+			display: block;
+			width: 27%;
+		}
+		input[type='submit']{
+			background: none;
+			border: 1px solid $tertiary-color;
+			color: $tertiary-color;
+			height: 35px;
+			width: 22%;
+			cursor: pointer;
+			width: 19%;
+		}
+		input[type="submit"]:hover{
+			color: $accept-color;
+			border-color: $accept-color;
+			transition: .3s  
 		}
 	}
 

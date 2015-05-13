@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   #Neighborhood Routes (Main)
   root 'neighborhoods#index'
 
-  get '/name' => 'neighborhoods#profile'
+
 
   post '/users' => 'users#create'
 
   post 'sessions' => 'sessions#create'
+  delete 'sessions' => 'sessions#destroy'
 
   get '/search/:id' => 'neighborhoods#search'
 
