@@ -1,25 +1,24 @@
 <body id="profile-body">
 
-  <nav id="profile-nav">
+  <!-- <nav id="profile-nav">
     <%= form_tag('/sessions', method: :update, :id => 'nav-edit-form') do |f| %>
       <%= text_field_tag :email, nil, placeholder: "Email...", class: 'nav-edit-field' %>
       <%= password_field_tag :password, nil, placeholder: "Password...", class: 'nav-edit-field'%>
       <%= submit_tag 'Edit', :id => 'edit-button'%>
     <% end %>
-  </nav>
+  </nav> -->
 
   <h1>Hello <%= @user.email %></h1>
-
-  <!-- Things to create -->
-    <!-- windows for email and email so they can be edited within the profile page -->
 
   <p id="edit-form">Edit Email or Password</p>
 
   <%= form_for @useredit do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email, class: 'edit-field', id: 'edit-email' %>
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'edit-field', id: 'edit-password' %>
+    <%= f.label :current_email %>
+    <%= f.text_field :current_email, class: 'edit-field', id: 'edit-email-current', value: @user.email %>
+    <%= f.label :update_email %>
+    <%= f.text_field :email, class: 'edit-field', id: 'edit-email-new' %>
+    <%= f.label :new_password %>
+    <%= f.password_field :password, class: 'edit-field', id: 'edit-password-new' %>
     <%= f.submit%>
   <% end %>
 
@@ -47,4 +46,6 @@
 
   </script>
 
+
+  <%= console %>
 </body>
