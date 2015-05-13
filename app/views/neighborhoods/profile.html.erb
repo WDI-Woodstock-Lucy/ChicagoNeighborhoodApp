@@ -15,6 +15,13 @@
 
   <p id="edit-form">Edit Email or Password</p>
 
+  <%= form_for @user do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'edit-field', id: 'edit-email' %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'edit-field', id: 'edit-password' %>
+    <%= f.submit%>
+  <% end %>
 
   <script type="text/javascript">
     $(document).ready(function(){
