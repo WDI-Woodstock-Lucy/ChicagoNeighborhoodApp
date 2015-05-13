@@ -14,11 +14,13 @@ Rails.application.routes.draw do
   get '/search/:id' => 'neighborhoods#search'
 
 #Profile routes (to get profile, update information)
-  get '/profile' => 'neighborhoods#profile'
+  get '/profile' => 'users#profile'
+
+  post '/profile' => 'users#update_prof'
 
   get '/users/:id' => 'users#profile'
 
-  # update '/users/:id' => 'users#update'
+  #update '/users' => '#update'
 
   get '/reviews' => 'reviews#index'
 
