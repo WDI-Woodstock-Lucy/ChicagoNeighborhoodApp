@@ -1,25 +1,25 @@
 <body id="profile-body">
 
+  <h1>Hello <%= @user.email %></h1>
+
   <!-- <nav id="profile-nav">
-    <%= form_tag('/sessions', method: :update, :id => 'nav-edit-form') do |f| %>
-      <%= text_field_tag :email, nil, placeholder: "Email...", class: 'nav-edit-field' %>
-      <%= password_field_tag :password, nil, placeholder: "Password...", class: 'nav-edit-field'%>
+    <%= form_tag('/users', method: :update, :id => 'nav-edit-form') do |f| %>
+      <%= text_field_tag :current_email, nil, placeholder: "Current Email...", class: 'nav-edit-field' %>
+      <%= text_field_tag :new_email, nil, placeholder: "New Email...", class: 'nav-edit-field' %>
+      <%= password_field_tag :new_password, nil, placeholder: "New Password...", class: 'nav-edit-field'%>
       <%= submit_tag 'Edit', :id => 'edit-button'%>
     <% end %>
   </nav> -->
 
-  <h1>Hello <%= @user.email %></h1>
 
   <p id="edit-form">Edit Email or Password</p>
 
-  <%= form_for @useredit do |f| %>
-    <%= f.label :current_email %>
-    <%= f.text_field :current_email, class: 'edit-field', id: 'edit-email-current', value: @user.email %>
-    <%= f.label :update_email %>
-    <%= f.text_field :email, class: 'edit-field', id: 'edit-email-new' %>
-    <%= f.label :new_password %>
-    <%= f.password_field :password, class: 'edit-field', id: 'edit-password-new' %>
-    <%= f.submit%>
+  <%= form_for @user do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email%>
+    <%= f.label :password %>
+    <%= f.password_field :password%>
+    <%= f.submit %>
   <% end %>
 
   <script type="text/javascript">
@@ -32,15 +32,15 @@
 
       $('')
 
-      $('input[name="user[password]"]').on('keyup', function(evt){
-        evt.preventDefault();
-        var emailField = $(this);
-        if (emailField.val().length >= 6){
-          emailField.css("background-color", "rgba(89,193,114,.5)");
-        } else {
-          emailField.css("background-color", "rgba(255,1,1,.5)");
-        }
-      });
+      // $('input[name="user[password]"]').on('keyup', function(evt){
+      //   evt.preventDefault();
+      //   var emailField = $(this);
+      //   if (emailField.val().length >= 6){
+      //     emailField.css("background-color", "rgba(89,193,114,.5)");
+      //   } else {
+      //     emailField.css("background-color", "rgba(255,1,1,.5)");
+      //   }
+      // });
 
     })
 

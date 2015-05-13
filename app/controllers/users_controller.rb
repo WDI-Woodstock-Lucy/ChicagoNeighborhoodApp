@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     def update
       user = User.find(params[:id])
       user.update!(user_params)
-      redirect_to "/users/#{user_id}"
+      redirect_to "/users/#{user.id}"
     end
 
     def show
@@ -31,10 +31,10 @@ class UsersController < ApplicationController
       #Locate profile user
       authenticate!
       @user = current_user
-      @useredit = User.new
     end
 
     def update_prof
+      authenticate!
       @user = current_user
       puts params
       email = params[:email].to_s

@@ -7,10 +7,13 @@ Rails.application.routes.draw do
 
   get '/name' => 'neighborhoods#profile'
 
+<<<<<<< HEAD
   post '/neighborhoods' => 'neighborhoods#create' 
 
   post '/users' => 'users#create'
 
+=======
+>>>>>>> b3d63eec577d897e872fa094ce7f0a33e03c10d7
   post 'sessions' => 'sessions#create'
 
   get '/search/:id' => 'neighborhoods#search'
@@ -24,7 +27,7 @@ Rails.application.routes.draw do
 
   get '/users/:id' => 'users#profile'
 
-  #update '/users' => '#update'
+  resources :users, only: [:update, :create]
 
   get '/reviews' => 'reviews#index'
 
