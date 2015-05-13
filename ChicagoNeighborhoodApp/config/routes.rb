@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get '/users/:id' => 'users#profile'
 
-  update '/users/:id' => 'users#update'
+  # update '/users/:id' => 'users#update'
 
   get '/reviews' => 'reviews#index'
 

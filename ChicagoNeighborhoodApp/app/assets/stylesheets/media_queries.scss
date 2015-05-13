@@ -10,7 +10,7 @@ $primary-font: 'Lato', sans-serif;
 	// ==================================
 	body#main-body{
 		form{
-			width: 55%;
+			width: 45%;
 		}
 		form#sign-in-form{
 			width: 50%;
@@ -35,6 +35,7 @@ $primary-font: 'Lato', sans-serif;
 	// INDEX PAGE 
 	// ==================================
 	body#main-body{
+		//=====================================NAVIGATION
 		nav{
 			display: block;
 			background-color: rgba(44,44,44,.9);
@@ -67,15 +68,36 @@ $primary-font: 'Lato', sans-serif;
 				outline: none;
 			}
 			input[type="submit"]{
-				float: none;
+				display: block;
 				margin: 0 auto;
 			}
 		}
 		h1{
 			font-size: 48pt;
 		}
+		//============================NEIGHBORHOOD FORM
+		form{
+			width: 100%;
+			select{
+				float: none;
+				width: 50%;
+				margin: 0 auto 10px;
+				height: 48px;
+			}
+			#neighborhood-button{
+				float: none;
+				width: 30%;
+				margin: 0 auto;
+				display: block;
+			}
+		}
+		//============================FIXED SIGN IN FORM
 		form#sign-in-form{
 			display: none;
+		}
+		//=====================================NAVIGATION
+		form#new_user{
+			width: 100%;
 		}
 	}
 }

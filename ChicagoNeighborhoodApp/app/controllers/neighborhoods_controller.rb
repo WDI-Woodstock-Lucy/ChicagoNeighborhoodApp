@@ -14,13 +14,13 @@ class NeighborhoodsController < ApplicationController
   	location_name = @neighborhood.zipcode
   	parameters = { term: "restaurant"}
     results = Yelp.client.search(location_name, parameters)
-    @restaurants = results.businesses.sample(3)
+    @restaurants = results.businesses.sample(2)
 
     #RANDOM BAR SUGGESTIONS
     location_name = @neighborhood.zipcode
     parameters = { term: "bar"}
     results = Yelp.client.search(location_name, parameters)
-    @bars = results.businesses.sample(3)
+    @bars = results.businesses.sample(2)
 
   end
 
@@ -40,16 +40,17 @@ class NeighborhoodsController < ApplicationController
 
   def profile
     #Locate profile user
-    @user = User.find(params[:id])
+    authenticate!
+    @user = current_user
 
     #Make changes to profile (add, subtract saved)
-    email_change = @user.find(id).edit(:email)
-    password_change = @user.find(id).edit(:password)
-
-    #Review info - to create, to get all previous reviews and to post
-    all_reviews = @review.index
-    new_review = @review.create
-    delete_review = @review.destroy
+    # email_change = @user.find(id).edit(:email)
+    # password_change = @user.find(id).edit(:password)
+    #
+    # #Review info - to create, to get all previous reviews and to post
+    # all_reviews = @review.index
+    # new_review = @review.create
+    # delete_review = @review.destroy
 
   end
 end
