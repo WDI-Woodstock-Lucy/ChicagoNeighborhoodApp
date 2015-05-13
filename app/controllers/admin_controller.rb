@@ -3,7 +3,7 @@ class AdminController < ApplicationController
   def home
     admin_authenticate!
     @user = current_user
-    @neighborhood = Neighborhood.new
+    @neighborhood = params[:id] ? Neighborhood.find(params[:id]) : Neighborhood.new
     @neighborhoods = Neighborhood.all
   end
 
@@ -13,12 +13,14 @@ class AdminController < ApplicationController
   end
 
   def update
-    @neighborhood.find(params[:id])
-    @neighborhood.update!(neighborhood_params)
+    neighborhood = Neighborhood.find(params[:id])
+    neighborhood.update!(neighborhood_params)
+    redirect_to '/admin'
   end
 
   def destroy
     Neighborhood.destroy(params[:id])
+    redirect_to '/admin'
   end
 
   private

@@ -36,8 +36,16 @@
       <td><%= hood.name %></td>
       <td><%= hood.description %></td>
       <td><%= hood.zipcode %></td>
-      <td><%= button_to "Edit", '/neighborhoods', :class => "button", :method => :update  %></td>
-      <td><%= button_to "Delete", '/neighborhoods', :class => "button", :method => :destroy  %></td>
+      <td>
+        <%= form_tag("/neighborhoods/#{ hood.id }/edit", method: :get) do %>
+          <%= submit_tag "Edit" %>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag("/neighborhoods/#{ hood.id }", method: :delete) do %>
+          <%= submit_tag "Delete" %>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>

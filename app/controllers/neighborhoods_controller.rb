@@ -50,6 +50,11 @@ class NeighborhoodsController < ApplicationController
     @results = search_result.businesses
   end
 
+  def destroy
+    Neighborhood.destroy(params[:id])
+    redirect_to '/admin'
+  end
+
   private
   def neighborhood_params
     params.require(:neighborhood).permit(:name, :description, :zipcode)
