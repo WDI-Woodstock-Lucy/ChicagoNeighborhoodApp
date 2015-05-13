@@ -18,7 +18,7 @@ namespace :make_admin do
     user.save!
 
     julia = User.create({
-      email: "juliamchrusciel@gmail.com",
+      email: "juchru@gmail.com",
       password: "gachicago",
       is_admin: true
       })
