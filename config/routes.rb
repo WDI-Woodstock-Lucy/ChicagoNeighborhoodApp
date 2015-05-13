@@ -7,8 +7,6 @@ Rails.application.routes.draw do
 
   get '/name' => 'neighborhoods#profile'
 
-  post '/users' => 'users#create'
-
   post 'sessions' => 'sessions#create'
 
   get '/search/:id' => 'neighborhoods#search'
@@ -20,7 +18,7 @@ Rails.application.routes.draw do
 
   get '/users/:id' => 'users#profile'
 
-  #update '/users' => '#update'
+  resources :users, only: [:update, :create]
 
   get '/reviews' => 'reviews#index'
 
