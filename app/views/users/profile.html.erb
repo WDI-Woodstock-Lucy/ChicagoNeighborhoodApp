@@ -13,6 +13,7 @@
 
 
   <p id="edit-form">Update your email or password</p>
+  <p id="edit-form-note">Please Note: Your information cannot be updated unless you fill out both forms with the new email and old password or vice versa.</p>
 
   <%= form_for @user do |f| %>
     <%= f.label :email %>
@@ -62,7 +63,4 @@
     })
 
   </script>
-
-
-  <%= console %>
 </body>
