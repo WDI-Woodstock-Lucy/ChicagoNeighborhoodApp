@@ -11,5 +11,4 @@ namespace :make_admin do
       })
     user.save!
   end
-
 end
