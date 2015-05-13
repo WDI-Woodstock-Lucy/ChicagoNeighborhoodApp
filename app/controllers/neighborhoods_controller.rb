@@ -42,6 +42,7 @@ class NeighborhoodsController < ApplicationController
     #Locate profile user
     authenticate!
     @user = current_user
+    @useredit = User.new
 
     #Make changes to profile (add, subtract saved)
     # email_change = @user.find(id).edit(:email)
