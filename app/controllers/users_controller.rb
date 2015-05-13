@@ -28,17 +28,6 @@ class UsersController < ApplicationController
     end
 
     def profile
-      authenticate!
-      @user = current_user
-      @review = Review.new
-    end
-
-    private
-    def user_params
-      params.require(:user).permit(:password, :email, :is_admin)
-    end
-
-    def profile
       #Locate profile user
       authenticate!
       @user = current_user
@@ -46,11 +35,11 @@ class UsersController < ApplicationController
     end
 
     def update_prof
-      #Make changes to profile (add, subtract saved)
+      #Edit email and password
       @user_update_email = @user.update(:email)
       @user_update_password = @user.update(:password)
-      user_update_email.save!
-      user_update_password.save!
+      user_update_email.save
+      user_update_password.save
 
       # id = @user.find(params[:primary_key_id])
       # email_change = User.find(primary_key_id).edit(:email)
@@ -63,4 +52,11 @@ class UsersController < ApplicationController
       # new_review = @review.create
       # delete_review = @review.destroy
     end
+
+    private
+
+    def user_params
+      params.require(:user).permit(:password, :email, :is_admin)
+    end
+
 end
