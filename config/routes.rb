@@ -7,11 +7,15 @@ Rails.application.routes.draw do
 
   get '/name' => 'neighborhoods#profile'
 
+  post '/neighborhoods' => 'neighborhoods#create' 
+
   post '/users' => 'users#create'
 
   post 'sessions' => 'sessions#create'
 
   get '/search/:id' => 'neighborhoods#search'
+
+  get '/admin' => 'admin#home'
 
 #Profile routes (to get profile, update information)
   get '/profile' => 'users#profile'

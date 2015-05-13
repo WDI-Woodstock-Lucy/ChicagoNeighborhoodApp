@@ -1,9 +1,14 @@
 class NeighborhoodsController < ApplicationController
 
-
   def index
     @user = User.new
   end
+
+  def create
+    @neighborhood = Neighborhood.create(neighborhood_params)
+    redirect_to '/admin'
+  end
+
 
   def api_yelp
 
@@ -43,13 +48,12 @@ class NeighborhoodsController < ApplicationController
     search_term = {term: params[:term]}
     search_result = Yelp.client.search(location, search_term)
     @results = search_result.businesses
-    
   end
 
-  def create
-    User.create
+  private
+  def neighborhood_params
+    params.require(:neighborhood).permit(:name, :description, :zipcode)
   end
 
 
-  
 end

@@ -1,3 +1,19 @@
 <h1>Welcome to the Admin page</h1>
 
-<%= Neighborhood.all %>
+<%= form_for @neighborhood do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :zipcode %>
+  <%= f.text_field :zipcode %>
+  <%= f.submit %>
+<% end %>
+
+<br>
+
+
+<%= form_tag('/neighborhoods/create', method: :get) do %>
+<%= options_from_collection_for_select(Neighborhood.all, :id, :name) %>
+<%= options_from_collection_for_select(Neighborhood.all, :id, :description) %>
+<% end %>
