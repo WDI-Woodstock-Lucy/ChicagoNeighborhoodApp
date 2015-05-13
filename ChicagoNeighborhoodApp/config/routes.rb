@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   #Neighborhood Routes (Main)
   root 'neighborhoods#index'
 
-  get '/name' => 'neighborhoods#name'
+  get '/name' => 'neighborhoods#profile'
 
   post '/users' => 'users#create'
 
