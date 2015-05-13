@@ -1,3 +1,13 @@
+<style type="text/css">
+  th, td {
+    border: 1px solid black
+  }
+
+</style>
+
+
+
+
 <h1>Welcome to the Admin page</h1>
 
 <%= form_for @neighborhood do |f| %>
@@ -12,8 +22,31 @@
 
 <br>
 
+<table>
+  <thead>
+    <tr>
+      <th>Neighborhood</th>
+      <th>Description</th>
+      <th>Zip Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @neighborhoods.each do |hood|%>
+    <tr>
+      <td><%= hood.name %></td>
+      <td><%= hood.description %></td>
+      <td><%= hood.zipcode %></td>
+      <td><%= button_to "Edit", '/neighborhoods', :class => "button", :method => :update  %></td>
+      <td><%= button_to "Delete", '/neighborhoods', :class => "button", :method => :destroy  %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= form_tag('/neighborhoods/create', method: :get) do %>
+<br>
+
+
+<!-- <%= form_tag('/neighborhoods/create', method: :get) do %>
 <%= options_from_collection_for_select(Neighborhood.all, :id, :name) %>
 <%= options_from_collection_for_select(Neighborhood.all, :id, :description) %>
-<% end %>
+<% end %> -->

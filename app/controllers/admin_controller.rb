@@ -4,6 +4,7 @@ class AdminController < ApplicationController
     admin_authenticate!
     @user = current_user
     @neighborhood = Neighborhood.new
+    @neighborhoods = Neighborhood.all
   end
 
   def create

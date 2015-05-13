@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post '/neighborhoods' => 'neighborhoods#create'
 
+  post '/neighborhoods' => 'neighborhoods#update'
+
   post '/users' => 'users#create'
 
   post 'sessions' => 'sessions#create'
