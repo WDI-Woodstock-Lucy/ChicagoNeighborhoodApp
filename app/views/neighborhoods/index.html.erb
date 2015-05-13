@@ -17,7 +17,7 @@
 
 	<!-- NEIGHBORHOOD SELECTOR -->
 	<%= form_tag('/neighborhoods/show', method: :get) do %>
-	<%= select_tag :neighborhood_id, options_for_select([['Wicker Park', 1], ['Logan Square', 2]]) %>
+	<%= select_tag :neighborhood_id, options_from_collection_for_select(Neighborhood.all, :id, :name) %>
 	<%= submit_tag 'Explore', :id=> "neighborhood-button"%>
 	<% end %>
 
@@ -74,9 +74,9 @@
 				} else {
 					emailField.css("background-color", "rgba(255,1,1,.5)");
 				}
-			});	
+			});
 
-		})		
+		})
 
 
 	</script>

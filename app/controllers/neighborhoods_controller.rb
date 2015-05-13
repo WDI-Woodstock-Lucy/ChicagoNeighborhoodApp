@@ -5,6 +5,18 @@ class NeighborhoodsController < ApplicationController
     @user = User.new
   end
 
+  def api_yelp
+
+    id = params[:neighborhood_id] || params[:id]
+    @neighborhood = Neighborhood.find(id)
+    location = @neighborhood.name
+    search_term = {term: params[:term]}
+    search_result = Yelp.client.search(location, search_term)
+    @results = search_result.businesses
+
+
+  end
+
   def show
   	#NEIGHBORHOOD SELECTOR
   	id = params[:neighborhood_id] || params[:id]
@@ -31,6 +43,7 @@ class NeighborhoodsController < ApplicationController
     search_term = {term: params[:term]}
     search_result = Yelp.client.search(location, search_term)
     @results = search_result.businesses
+    
   end
 
   def create
