@@ -35,11 +35,19 @@ class UsersController < ApplicationController
     end
 
     def update_prof
+      @user = current_user
+      puts params
+      email = params[:email].to_s
+      password = params[:password].to_s
+      @user.email = email
+      @user.password = password
+      @user.save! ## is creating new entry... current_user is undefined
+
       #Edit email and password
-      @user_update_email = @user.update(:email)
-      @user_update_password = @user.update(:password)
-      user_update_email.save
-      user_update_password.save
+      #@user_update_email = @user.update(:email)
+      #@user_update_password = @user.update(:password)
+      #user_update_email.save
+      #user_update_password.save
 
       # id = @user.find(params[:primary_key_id])
       # email_change = User.find(primary_key_id).edit(:email)

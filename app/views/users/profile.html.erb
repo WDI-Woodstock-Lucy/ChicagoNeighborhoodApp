@@ -14,15 +14,9 @@
 
   <%= form_for @useredit do |f| %>
     <%= f.label :current_email %>
-    <%= f.text_field :email, class: 'edit-field', id: 'edit-email-current' %>
-    <%= f.label :new_email %>
-    <%= f.password_field :email, class: 'edit-field', id: 'edit-email-new' %>
-    <%= f.submit%>
-  <% end %>
-
-  <%= form_for @useredit do |f| %>
-    <%= f.label :current_password %>
-    <%= f.text_field :password, class: 'edit-field', id: 'edit-password-current' %>
+    <%= f.text_field :current_email, class: 'edit-field', id: 'edit-email-current', value: @user.email %>
+    <%= f.label :update_email %>
+    <%= f.text_field :email, class: 'edit-field', id: 'edit-email-new' %>
     <%= f.label :new_password %>
     <%= f.password_field :password, class: 'edit-field', id: 'edit-password-new' %>
     <%= f.submit%>
@@ -52,4 +46,6 @@
 
   </script>
 
+
+  <%= console %>
 </body>
