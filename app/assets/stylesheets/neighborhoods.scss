@@ -18,7 +18,7 @@ $secondary-font: 'Grand Hotel', serif;
 $primary-color: rgb(102,203,255);
 $secondary-color: rgb(203,15,41);
 $tertiary-color: rgb(255,255,255);
-$accept-color: rgb(89,193,114); 
+$accept-color: rgb(89,193,114);
 
 
 
@@ -51,6 +51,7 @@ nav#nav{
 		background: none;
 		border: 1px solid $tertiary-color;
 		color: $tertiary-color;
+		margin: 0 auto;
 		height: 35px;
 		width: 22%;
 		cursor: pointer;
@@ -58,7 +59,7 @@ nav#nav{
 	input[type="submit"]:hover{
 		color: $accept-color;
 		border-color: $accept-color;
-		transition: .3s  
+		transition: .3s
 	}
 	//===================CTA BUTTONS
 	h3{
@@ -278,7 +279,7 @@ body#main-body {
 		input[type="submit"]:hover{
 			color: $accept-color;
 			border-color: $accept-color;
-			transition: .3s  
+			transition: .3s
 		}
 	}
 
@@ -302,10 +303,3 @@ body#main-body {
 
 
 @import 'media_queries';
-
-
-
-
-
-
-
