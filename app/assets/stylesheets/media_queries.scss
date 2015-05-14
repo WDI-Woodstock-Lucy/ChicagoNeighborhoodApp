@@ -38,7 +38,7 @@ $accept-color: rgb(89,193,114);
 	// ==================================
 	// NAVIGATION
 	// ==================================
-	nav#nav{
+	nav{
 		display: block;
 		background-color: rgba(44,44,44,.9);
 		min-height: 50px;
@@ -46,6 +46,9 @@ $accept-color: rgb(89,193,114);
 		z-index: 2;
 		top: 0;
 		width: 100%;
+	}
+	nav#nav{
+		
 		h3{
 			display: none;
 		}
@@ -87,6 +90,37 @@ $accept-color: rgb(89,193,114);
 		}
 	}
 
+	nav.user-nav{
+		img{
+			display: block;
+			width: 35px;
+			margin: 10px 0 15px 5px;
+			cursor: pointer;
+		}
+		.non-responsive{
+			display: none;
+		}
+		input[type="submit"]{
+			display: none;
+		}
+		.responsive{
+			display: block;
+			font-family: $primary-font;
+			font-size: 12pt;
+			text-align: center;
+			color: $tertiary-color;
+			border-top: 1px solid $tertiary-color;
+			padding: 15px 0;
+			margin: 0;
+			cursor: pointer;
+			float: none;
+		}
+		.responsive:hover{
+			color: $primary-color;
+			border-color: $primary-color;
+			transition: .3s;
+		}
+	}
 
 
 	// ==================================

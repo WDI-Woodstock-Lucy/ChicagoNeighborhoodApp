@@ -31,6 +31,7 @@ $accept-color: rgb(89,193,114);
 nav#nav{
 	min-height: 50px;
 	width: 100%;
+	background-color: rgba(0,0,0,.7);
 	img{
 		display: none;
 	}
@@ -99,6 +100,12 @@ nav.user-nav{
 	background-color: rgba(0,0,0,.7);
 	min-height: 50px;
 	font-family: $primary-font;
+	h2.responsive{
+		display: none;
+	}
+	img{
+		display: none;
+	}
 	//===================MY PROFILE LINK
 	h2, a{
 		font-family: $primary-font;
@@ -123,13 +130,15 @@ nav.user-nav{
 		font-size: 14pt;
 		text-align: center;
 		color: $tertiary-color;
-		margin: 0;
+		margin: 0 auto;
 		line-height: 50px;
 		letter-spacing: 5px;
 		float: none;
 	}
 	a#nav-logo-wrapper{
 		float: none;
+		margin: 0 auto;
+		display: block;
 	}
 	//===================SIGN OUT FORM
 	form#sign-out-form{
