@@ -6,6 +6,7 @@ $primary-font: 'Lato', sans-serif;
 $primary-color: rgb(102,203,255);
 // $secondary-color: ;
 $tertiary-color: rgb(255,255,255);
+$quaternary-color: rgba(0,0,0, 0.7);
 $accept-color: rgb(89,193,114);
 // // ==================================
 // // 960 PIXELS
@@ -40,6 +41,7 @@ $accept-color: rgb(89,193,114);
 // 	// ==================================
 body{
   background-color: $primary-color;
+  text-align: center;
 }
 h1 {
   font-family: $primary-font;
@@ -48,12 +50,12 @@ h1 {
 }
 table {
   font-family: $primary-font;
-  color: $tertiary-color;
+  color: $quaternary-color;
 }
 
 td {
   font-family: $primary-font;
-  color: $tertiary-color;
+  color: $quaternary-color;
 }
 
 #profile-body {
