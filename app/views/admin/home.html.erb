@@ -36,12 +36,12 @@
       <td><%= hood.name %></td>
       <td><%= hood.description %></td>
       <td><%= hood.zipcode %></td>
-      <td>
+      <td id="edit-button">
         <%= form_tag("/neighborhoods/#{ hood.id }/edit", method: :get) do %>
           <%= submit_tag "Edit" %>
         <% end %>
       </td>
-      <td>
+      <td id="delete-button">
         <%= form_tag("/neighborhoods/#{ hood.id }", method: :delete) do %>
           <%= submit_tag "Delete" %>
         <% end %>
