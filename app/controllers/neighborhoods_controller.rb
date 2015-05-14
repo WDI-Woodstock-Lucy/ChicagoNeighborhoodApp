@@ -48,6 +48,8 @@ class NeighborhoodsController < ApplicationController
     search_term = {term: params[:term]}
     search_result = Yelp.client.search(location, search_term)
     @results = search_result.businesses
+
+    render json: @results
   end
 
   def destroy
