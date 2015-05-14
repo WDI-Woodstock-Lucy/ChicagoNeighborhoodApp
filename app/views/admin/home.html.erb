@@ -10,6 +10,7 @@
 
 <h1>Welcome to the Admin page</h1>
 
+<div id="admin-neighborhood-form"
 <%= form_for @neighborhood do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -19,6 +20,7 @@
   <%= f.text_field :zipcode %>
   <%= f.submit %>
 <% end %>
+</div>
 
 <br>
 
@@ -36,12 +38,12 @@
       <td><%= hood.name %></td>
       <td><%= hood.description %></td>
       <td><%= hood.zipcode %></td>
-      <td id="edit-button">
+      <td>
         <%= form_tag("/neighborhoods/#{ hood.id }/edit", method: :get) do %>
           <%= submit_tag "Edit" %>
         <% end %>
       </td>
-      <td id="delete-button">
+      <td>
         <%= form_tag("/neighborhoods/#{ hood.id }", method: :delete) do %>
           <%= submit_tag "Delete" %>
         <% end %>
