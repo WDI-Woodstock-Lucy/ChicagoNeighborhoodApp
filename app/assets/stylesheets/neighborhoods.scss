@@ -18,6 +18,8 @@ $secondary-font: 'Grand Hotel', serif;
 $primary-color: rgb(102,203,255);
 $secondary-color: rgb(203,15,41);
 $tertiary-color: rgb(255,255,255);
+$quaternary-color: rgba(0,0,0,0.7);
+$quinary-color: rgba(40,40,40,0.8);
 $accept-color: rgb(89,193,114);
 $nav-color: rgba(0,0,0,.7);
 
@@ -26,6 +28,42 @@ $nav-color: rgba(0,0,0,.7);
 /*====================================================
 					NAVIGATION
 ======================================================*/
+h2 {
+	font-family: $primary-font;
+  font-size: 23px;
+  color: $quaternary-color;
+}
+h3 {
+	font-family: $primary-font;
+  font-size: 18px;
+	color: $quinary-color;
+}
+#yelp-restaurants a {
+	text-decoration: none;
+	font-family: $primary-font;
+	color: $quinary-color;
+}
+
+#foursquare-restaurants a {
+
+	text-decoration: none;
+	font-family: $primary-font;
+	color: $quinary-color;
+}
+#yelp-bars a {
+
+	text-decoration: none;
+	font-family: $primary-font;
+	color: $quinary-color;
+}
+#foursquare-bars a {
+
+	text-decoration: none;
+	font-family: $primary-font;
+	color: $quinary-color;
+}
+
+
 
 
 //=======================NO USER NAVIGATION
