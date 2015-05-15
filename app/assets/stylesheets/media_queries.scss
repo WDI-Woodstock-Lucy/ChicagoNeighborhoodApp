@@ -58,6 +58,7 @@ $accept-color: rgb(89,193,114);
 			margin: 10px 0 15px 5px;
 			cursor: pointer;
 		}
+		
 		h2.responsive-nav{
 			display: block;
 			font-family: $primary-font;
@@ -88,6 +89,20 @@ $accept-color: rgb(89,193,114);
 				margin-bottom: 50px;
 			}
 		}
+		form#sign-up-form{
+			width: 100%;
+			input{
+				display: block;
+				float: none;
+				margin: 0 auto 10px;
+			}
+			input.sign-up-field{
+				width: 80%;
+			}
+			input[type="submit"]{
+				margin-bottom: 50px;
+			}
+		}
 	}
 
 	nav.user-nav{
@@ -103,7 +118,20 @@ $accept-color: rgb(89,193,114);
 		input[type="submit"]{
 			display: none;
 		}
+		a{
+			float: none;
+			width: 100%;
+		}
+		a#nav-logo-wrapper{
+			display: none;
+		}
 		.responsive{
+			display: block;
+			cursor: pointer;
+			float: none;
+			margin: 0;
+		}
+		h2{
 			display: block;
 			font-family: $primary-font;
 			font-size: 12pt;
@@ -115,7 +143,7 @@ $accept-color: rgb(89,193,114);
 			cursor: pointer;
 			float: none;
 		}
-		.responsive:hover{
+		h2:hover{
 			color: $primary-color;
 			border-color: $primary-color;
 			transition: .3s;

@@ -53,8 +53,6 @@ app.renderYelpSugg = function(data){
 
 
 
-
-
 //============================================================================SUGGESTION LIST
 app.suggestions = function (){
 
@@ -104,8 +102,8 @@ app.suggestions = function (){
 		});
 	};
 	//======CALLS FOR RESTAURANTS & BARS
-	fourSquareCall('restaurant', app.renderFoursquareSugg, '#restaurant-suggestions');
-	fourSquareCall('bar', app.renderFoursquareSugg, '#bar-suggestions');
+	fourSquareCall('restaurant', app.renderFoursquareSugg, '#foursquare-restaurants');
+	fourSquareCall('bar', app.renderFoursquareSugg, '#foursquare-bars');
 
 	//===============================
 	// YELP
@@ -131,8 +129,8 @@ app.suggestions = function (){
 		});
 	};
 	//======CALLS FOR RESTAURANTS & BARS
-	yelpCall('restaurant', app.renderYelpSugg, '#restaurant-suggestions');
-	yelpCall('bar', app.renderYelpSugg, '#bar-suggestions');
+	yelpCall('restaurant', app.renderYelpSugg, '#yelp-restaurants');
+	yelpCall('bar', app.renderYelpSugg, '#yelp-bars');
 
 	// ===============================
 	// VIEWS
@@ -144,7 +142,7 @@ app.suggestions = function (){
 app.searchStuff = function(){
 	$('#search-submit').click(function(evt){
 		evt.preventDefault();
-
+		$('#search-result').empty();
 		var clientKey = 'PFZGPZCMEIYOB1CLDVEFJXN2BBQP3CTLPDOJEMR1JPQ2A1TL';
 		var clientSecret = 'WRENZBLZL5DQK3NEOGALJ1K4J0YQRE4EXHGYHDWJNAG0QEVC';
 		var location = app.neighborhoodZip;
@@ -156,19 +154,15 @@ app.searchStuff = function(){
 		//======================================================
 		$.ajax({
 			method: 'get',
-			url: 'https://api.foursquare.com/v2/venues/search?client_id='+clientKey+'&client_secret='+clientSecret+'&v=20130815&near='+location+'&query='+searchTerm+'&limit=2',
+			url: 'https://api.foursquare.com/v2/venues/explore?client_id='+clientKey+'&client_secret='+clientSecret+'&v=20130815&near='+location+'&query='+searchTerm+'&limit=2',
 			dataType: 'json',
 			success: function(data){
-				var data = data.response.venues;
-				var result1 = data[randNum(data.length)];
-				var result2 = data[randNum(data.length)];
-				if(result1.name == result2.name){
-					var result2 = data[randNum(data.length)];
-				}
-				console.log(result2);
-				console.log(result1);
-				$('#search-result').append(app.renderFoursquareSugg(result1));
-				$('#search-result').append(app.renderFoursquareSugg(result2));
+				console.log(data);
+				var data = data.response.groups[0].items;
+				var result1 = data[0];
+				var result2 = data[1];
+				$('#foursquare-results').append(app.renderFoursquareSugg(result1));
+				$('#foursquare-results').append(app.renderFoursquareSugg(result2));
 			}
 		});
 
@@ -187,8 +181,8 @@ app.searchStuff = function(){
 				if(result1.name == result2.name){
 					var result2 = data[randNum(data.length)];
 				}
-				$('#search-result').append(app.renderYelpSugg(result1));
-				$('#search-result').append(app.renderYelpSugg(result2));
+				$('#yelp-results').append(app.renderYelpSugg(result1));
+				$('#yelp-results').append(app.renderYelpSugg(result2));
 			}
 		});
 	});
