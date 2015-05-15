@@ -19,6 +19,7 @@ $primary-color: rgb(102,203,255);
 $secondary-color: rgb(203,15,41);
 $tertiary-color: rgb(255,255,255);
 $accept-color: rgb(89,193,114);
+$nav-color: rgba(0,0,0,.7);
 
 
 
@@ -28,10 +29,11 @@ $accept-color: rgb(89,193,114);
 
 
 //=======================NO USER NAVIGATION
+
 nav#nav{
 	min-height: 50px;
 	width: 100%;
-	background-color: rgba(0,0,0,.7);
+	background-color: $nav-color;
 	img{
 		display: none;
 	}
@@ -91,6 +93,21 @@ nav#nav{
 			width: 22%
 		}
 	}
+	form#sign-up-form{
+		width: 35%;
+		float: right;
+		margin-top: 10px;
+		input{
+			float: left;
+			margin-right: 1%;
+		}
+		input.sign-in-field{
+			width: 35%;
+		}
+		input[type="submit"]{
+			width: 22%
+		}
+	}
 }
 
 
@@ -98,7 +115,7 @@ nav#nav{
 //=======================USER SIGNED IN NAVIGATION
 nav.user-nav{
 	width: 100%;
-	background-color: rgba(0,0,0,.7);
+	background-color: $nav-color;
 	min-height: 50px;
 	font-family: $primary-font;
 	h2.responsive{
@@ -211,7 +228,7 @@ body#main-body {
 		font-weight: 700;
 		border: none;
 		border-radius: 5px;
-		background: rgba(0,0,0,.7);
+		background: $nav-color;
 		width: 60%;
 		padding: 0px;
 		height: 40px;
