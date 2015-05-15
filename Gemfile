@@ -37,6 +37,7 @@ gem 'geocoder', '~> 1.2.8'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -49,4 +50,8 @@ group :development, :test do
 
   #RSPEC Rails for test-driven development
   gem 'rspec-rails', '~> 3.0'
+
+  #For feature specs
+  gem 'capybara', '~> 2.4.4'  
+
 end
