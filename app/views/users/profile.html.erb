@@ -1,6 +1,39 @@
 <body id="profile-body">
 
-  <h1>Hello <%= @user.email %>!</h1>
+  <h1>Hello, <%= @user.email %>!</h1>
+
+  <!-- Chicago star -->
+  <div id="chicago-star">
+    <div id="one-top-middle"></div>
+    <div id="one-top-right"></div>
+    <div id="one-right"></div>
+    <div id="one-bottom-right"></div>
+    <div id="one-bottom-middle"></div>
+    <div id="one-bottom-left"></div>
+    <div id="one-left"></div>
+    <div id="one-top-left"></div>
+
+    <div id="two-top-middle"></div>
+    <div id="two-top-right"></div>
+    <div id="two-right"></div>
+    <div id="two-bottom-right"></div>
+    <div id="two-bottom-middle"></div>
+    <div id="two-bottom-left"></div>
+    <div id="two-left"></div>
+    <div id="two-top-left"></div>
+
+
+    <div id="third-top-middle"></div>
+    <div id="third-top-right"></div>
+    <div id="third-right"></div>
+    <div id="third-bottom-right"></div>
+    <div id="third-bottom-middle"></div>
+    <div id="third-bottom-left"></div>
+    <div id="third-left"></div>
+    <div id="third-top-left"></div>
+
+
+  </div>
 
   <!-- <nav id="profile-nav">
     <%= form_tag('/users', method: :update, :id => 'nav-edit-form') do |f| %>
@@ -15,6 +48,7 @@
   <p id="edit-form">Update your email or password</p>
   <p id="edit-form-note">Please Note: Your information cannot be updated unless you fill out both forms with the new email and old password or vice versa.</p>
 
+  <div id="profile-update-form">
   <%= form_for @user do |f| %>
     <%= f.label :email %>
     <%= f.text_field :email%>
@@ -22,6 +56,7 @@
     <%= f.password_field :password%>
     <%= f.submit %>
   <% end %>
+  </div>
 
   <script type="text/javascript">
 

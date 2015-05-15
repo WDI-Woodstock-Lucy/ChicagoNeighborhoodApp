@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#Gemcoder is used to translate latitudes and longitudes into addresses/locations and vice versa. Read more at: http://www.rubygeocoder.com/
+gem 'geocoder', '~> 1.2.8'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -7,38 +7,8 @@ $primary-color: rgb(102,203,255);
 // $secondary-color: ;
 $tertiary-color: rgb(255,255,255);
 $quaternary-color: rgba(0,0,0, 0.7);
-$accept-color: rgb(89,193,114);
 // // ==================================
-// // 960 PIXELS
-// // ==================================
-// @media only screen and (max-width : 960px) {
-//
-// 	// ==================================
-// 	// INDEX PAGE
-// 	// ==================================
-// 	body#main-body{
-// 		form{
-// 			width: 45%;
-// 		}
-// 		form#sign-in-form{
-// 			width: 50%;
-// 		}
-// 		form#new_user{
-// 			width: 70%;
-// 		}
-// 	}
-//
-//
-//
-// }
-//
-//
-//
-// // ==================================
-// // 670 PIXELS
-// // ==================================
-// @media only screen and (max-width : 670px) {
-// 	// ==================================
+
 body{
   background-color: $primary-color;
   text-align: center;
@@ -48,15 +18,26 @@ h1 {
   font-size: 36px;
   color: $tertiary-color;
 }
+#admin-neighborhood-form {
+  font-family: $primary-font;
+  font-size: 18px;
+  font-weight: bold;
+  color: $quaternary-color;
+}
 table {
   font-family: $primary-font;
   color: $quaternary-color;
 }
 
-td {
-  font-family: $primary-font;
-  color: $quaternary-color;
-}
+//
+// #edit-button{
+//   font-family: $primary-font;
+//   // background-color: $quaternary-color;
+// }
+// #delete-button{
+//   font-family: $primary-font;
+//   color: $quaternary-color;
+// }
 
 #profile-body {
   font-family: $primary-font;
