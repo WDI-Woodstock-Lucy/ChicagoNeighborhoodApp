@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   get '/search/:id' => 'neighborhoods#search'
 
   get '/admin' => 'admin#home'
-  post '/admin' => 'admin#post'
+  patch 'admin' => 'admin#update'
+  post '/admin' => 'admin#create'
   delete '/admin' => 'admin#destroy'
 
 #Profile routes (to get profile, update information)
