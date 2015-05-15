@@ -52,6 +52,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 
   #For feature specs
-  gem 'capybara', '~> 2.4.4'  
+  gem 'capybara', '~> 2.4.4'
+  gem 'rack_session_access'
 
 end
