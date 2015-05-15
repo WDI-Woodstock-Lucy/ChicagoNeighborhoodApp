@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    current_user.reviews <<Review.find(params[:id]).update(review_params)
+    current_user.reviews << Review.find(params[:id]).update(review_params)
 
   end
 
@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:review_body, :rating,)
+    params.require(:review).permit(:review_body, :rating)
   end
 
 
