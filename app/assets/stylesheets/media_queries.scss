@@ -58,7 +58,9 @@ $accept-color: rgb(89,193,114);
 			margin: 10px 0 15px 5px;
 			cursor: pointer;
 		}
-		
+		a#nav-logo-wrapper{
+			display: none;
+		}
 		h2.responsive-nav{
 			display: block;
 			font-family: $primary-font;
