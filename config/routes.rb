@@ -16,9 +16,6 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
 
   get '/users/:id/edit' => 'admin#home'
-  patch '/users/:id' => 'admin#update'
-  put '/users/:id' => 'admin#update'
-
   delete '/users/:id' => 'users#destroy'
 
   # Sessions Routes
