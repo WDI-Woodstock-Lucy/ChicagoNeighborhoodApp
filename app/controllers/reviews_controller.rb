@@ -12,7 +12,6 @@ class ReviewsController < ApplicationController
 
   def update
     current_user.reviews << Review.find(params[:id]).update(review_params)
-
   end
 
   def destroy
