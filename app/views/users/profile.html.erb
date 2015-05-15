@@ -2,14 +2,7 @@
 
   <h1>Hello, <%= @user.email %>!</h1>
 
-  <!-- <nav id="profile-nav">
-    <%= form_tag('/users', method: :update, :id => 'nav-edit-form') do |f| %>
-      <%= text_field_tag :current_email, nil, placeholder: "Current Email...", class: 'nav-edit-field' %>
-      <%= text_field_tag :new_email, nil, placeholder: "New Email...", class: 'nav-edit-field' %>
-      <%= password_field_tag :new_password, nil, placeholder: "New Password...", class: 'nav-edit-field'%>
-      <%= submit_tag 'Edit', :id => 'edit-button'%>
-    <% end %>
-  </nav> -->
+
 
   <p id="edit-form">Update your email or password</p>
   <p id="edit-form-note">Please Note: Your information cannot be updated unless you fill out both forms with the new email and old password or vice versa.</p>

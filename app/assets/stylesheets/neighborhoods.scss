@@ -115,6 +115,26 @@ nav#nav{
 		color: $primary-color;
 		transition: .3s;
 	}
+	h3#welcome{
+		float: left;
+		margin: 0 50px;
+	}
+	//===================LOGO
+	h1#nav-logo{
+		font-weight: 700;
+		font-size: 14pt;
+		text-align: center;
+		color: $tertiary-color;
+		margin: 0 auto;
+		line-height: 50px;
+		letter-spacing: 5px;
+		float: none;
+	}
+	a#nav-logo-wrapper{
+		float: left;
+		margin-left: 24%;
+
+	}
 	//===================SIGN IN FORM
 	form#sign-in-form{
 		width: 35%;
@@ -139,7 +159,7 @@ nav#nav{
 			float: left;
 			margin-right: 1%;
 		}
-		input.sign-in-field{
+		input.sign-up-field{
 			width: 35%;
 		}
 		input[type="submit"]{

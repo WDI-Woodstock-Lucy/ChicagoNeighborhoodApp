@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   # Sessions Routes
   post 'sessions' => 'sessions#create'
+  post 'sessions' => 'users#create'
   delete 'sessions' => 'sessions#destroy'
 
   # Search Routes
