@@ -6,20 +6,39 @@
 </style>
 
 
-
-
 <h1>Welcome to the Admin page</h1>
 
 <%= form_for @neighborhood do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_area :description %>
   <%= f.label :zipcode %>
   <%= f.text_field :zipcode %>
   <%= f.submit %>
 <% end %>
 
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user|%>
+    <tr>
+      <td><%= user.email %></td>
+      <td>
+        <%= form_tag("/users/#{ user.id }", method: :delete) do %>
+          <%= submit_tag "Delete" %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
 
