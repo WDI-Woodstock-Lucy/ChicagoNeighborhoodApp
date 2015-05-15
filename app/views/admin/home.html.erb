@@ -10,7 +10,7 @@
 
 <h1>Welcome to the Admin page</h1>
 
-<div id="admin-neighborhood-form"
+<div id="admin-neighborhood-form">
 <%= form_for @neighborhood do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -54,9 +54,3 @@
 </table>
 
 <br>
-
-
-<!-- <%= form_tag('/neighborhoods/create', method: :get) do %>
-<%= options_from_collection_for_select(Neighborhood.all, :id, :name) %>
-<%= options_from_collection_for_select(Neighborhood.all, :id, :description) %>
-<% end %> -->
