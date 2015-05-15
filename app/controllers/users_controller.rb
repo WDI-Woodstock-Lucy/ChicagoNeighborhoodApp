@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     def update
       user = User.find(params[:id])
       user.update!(user_params)
-      redirect_to "/users/#{user.id}"
+      redirect_to "/admin"
     end
 
     def show
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
     def destroy
       User.destroy(params[:id])
-      redirect_to "/users"
+      redirect_to "/admin"
     end
 
     def profile
