@@ -1,5 +1,42 @@
-
 <body id="show-body">
+	<style type="text/css">
+
+
+
+
+
+
+		ul{
+			padding: 0;
+			width: 100%;
+			display: block;
+			overflow: auto;
+			list-style: none;
+		}
+
+		li{
+			float: left;
+			width: 25%;
+			text-align: center;
+		}
+
+		li img{
+			display: block;
+			width: 100px;
+			margin: 0 auto;
+		}
+
+		#yelp_logo {
+			width:115px;
+			height:25;
+			float: left;
+		}
+
+		#foursquare_logo {
+			float: right;
+		}
+
+	</style>
 
 	<h1><%= @neighborhood.name %></h1>
 	<h2><%= @neighborhood.description%></h2>
@@ -11,12 +48,14 @@
 		<input type="submit" id="search-submit">
 	</form>
 
+	<img src="https://s3-media3.fl.yelpcdn.com/assets/2/www/img/65526d1a519b/developers/Powered_By_Yelp_Red.png" alt="Powered by Yelp, red" id= 'yelp_logo'>
+	<img style="-webkit-user-select: none" src="https://ss0.4sqi.net/img/poweredByFoursquare/poweredby-full-color-bf549c16c0ab3e1b04706ab5fcb422f1.png" id= 'foursquare_logo'>
 
 	<!-- RESTAURANTS -->
 	<ul id="search-result">
 
 	</ul>
-	
+
 	<!-- RESTAURANTS -->
 	<ul id="restaurant-suggestions">
 
@@ -26,8 +65,6 @@
 	<ul id="bar-suggestions">
 
 	</ul>
-
-
 
 
 	<script type="text/javascript">

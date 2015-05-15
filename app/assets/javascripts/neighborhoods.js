@@ -64,6 +64,20 @@ app.suggestions = function (){
 	var location = app.neighborhoodZip;
 	var id = app.neighborhoodId;
 
+// //====================WalkScore_Rendering_Function
+// app.transitInfo = function (){
+// 	var clientKey = '2bd02fc7cb6ce1f6764b4a37008f5411';
+// 	var walkScore = wsiapikey.walkscore;
+// 	var walkScoreDesc = wsiapikey.walkscore;
+// 	var description = wsiapikey.description;
+//
+// }
+//
+//
+//
+// reverse_geocoded_by :latitude, :longitude
+// after_validation :reverse_geocode  # auto-fetch address
+
 
 	// ===============================
 	// FOURSQUARE
