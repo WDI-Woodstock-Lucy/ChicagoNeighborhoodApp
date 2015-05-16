@@ -101,7 +101,7 @@ nav#nav{
 	form#sign-in-form{
 		width: 35%;
 		float: right;
-		margin-top: 10px;
+		margin-top: 7px;
 		input{
 			float: left;
 			margin-right: 1%;
@@ -116,7 +116,7 @@ nav#nav{
 	form#sign-up-form{
 		width: 35%;
 		float: right;
-		margin-top: 10px;
+		margin-top: 7px;
 		input{
 			float: left;
 			margin-right: 1%;
@@ -222,13 +222,25 @@ body#main-body {
 		display: none;
 	}
 	//============================================HEADER
-
+	div {
+		width: 50%;
+	    margin: 0 auto;
+	    margin: 85px auto 50px;
+	}
 	h1 {
-		font-size: 60pt;
+		font-size: 48pt;
 		text-align: center;
 		color: $tertiary-color;
-		font-weight: 900;
-		margin-top: 125px;
+		font-weight: 700;
+		margin: 10px 0;
+		letter-spacing: 2px;
+	}
+	h3#tagline{
+		font-size: 14pt;
+		text-align: center;
+		color: $tertiary-color;
+		letter-spacing: 7px;
+		margin: 0 0 10px;
 	}
 	input{
 		border-radius: 5px;
@@ -255,7 +267,7 @@ body#main-body {
 		outline: none;
 		display: block;
 		float: left;
-		margin-right: 5%;
+		margin: 5px 5% 0 0;
 	}
 	#neighborhood-button{
 		font-size: 12pt;
@@ -275,7 +287,7 @@ body#main-body {
 		text-align: center;
 		color: $tertiary-color;
 		cursor: pointer;
-		width: 110px;
+		width: 125px;
 		margin: 25px auto;
 	}
 	p:hover{
