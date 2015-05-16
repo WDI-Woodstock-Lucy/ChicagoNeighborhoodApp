@@ -15,8 +15,12 @@ Rails.application.routes.draw do
   resources :users, only: [:update, :create]
   post '/users' => 'users#create'
 
+  get '/users/:id/edit' => 'admin#home'
+  delete '/users/:id' => 'users#destroy'
+
   # Sessions Routes
   post 'sessions' => 'sessions#create'
+  post 'sessions' => 'users#create'
   delete 'sessions' => 'sessions#destroy'
 
   # Search Routes
@@ -24,9 +28,10 @@ Rails.application.routes.draw do
 
   # Admin Routes
   get '/admin' => 'admin#home'
-  patch 'admin' => 'admin#update'
-  post '/admin' => 'admin#create'
-  delete '/admin' => 'admin#destroy'
+
+  patch '/neighborhoods/:id' => 'neighborhoods#update'
+  post '/neighborhoods' => 'neighborhoods#create'
+  delete '/neighborhoods/:id' => 'neighborhoods#destroy'
 
   #Profile routes (to get profile, update information)
   get '/profile' => 'users#profile'

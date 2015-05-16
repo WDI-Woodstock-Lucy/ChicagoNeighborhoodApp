@@ -8,14 +8,15 @@ class UsersController < ApplicationController
     end
 
     def create
-      user = User.create(user_params)
+      user = User.create!(user_params)
+      session[:user_id] = user.id
       redirect_to '/'
     end
 
     def update
       user = User.find(params[:id])
       user.update!(user_params)
-      redirect_to "/users/#{user.id}"
+      redirect_to "/admin"
     end
 
     def show
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
 
     def destroy
       User.destroy(params[:id])
-      redirect_to "/users"
+      redirect_to "/admin"
     end
 
     def profile
