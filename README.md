@@ -2,6 +2,12 @@
 
 ![blocktrotter_logo](github_images/blocktrotter_logo.png)
 
+##Synopsis
+Blocktrotter is a web-application that helps visitors and residents better explore some of the dozens of neighborhoods in the city of Chicago. With Yelp and Foursquare recommendations, Blocktrotter gives users the best options for their trip.
+
+
+
+
 User Stories
 
 Jake
