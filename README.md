@@ -1,6 +1,6 @@
 # BlockTrotter - A guide to Chicago neighborhoods
 
-![blocktrotter_logo](/blocktrotter_logo.png)
+![blocktrotter_logo](github_images/blocktrotter_logo.png)
 
 User Stories
 
