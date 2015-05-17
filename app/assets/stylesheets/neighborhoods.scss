@@ -17,61 +17,32 @@ $secondary-font: 'Grand Hotel', serif;
 //COLORS
 $primary-color: rgb(102,203,255);
 $secondary-color: rgb(203,15,41);
+$font-color: rgb(44,44,44);
 $tertiary-color: rgb(255,255,255);
 $quaternary-color: rgba(0,0,0,0.7);
 $quinary-color: rgba(40,40,40,0.8);
 $accept-color: rgb(89,193,114);
-$nav-color: rgba(0,0,0,.7);
+$nav-color: rgb(255,255,255);
 
 
+
+* {
+	outline: none;
+}
 
 /*====================================================
 					NAVIGATION
 ======================================================*/
-h2 {
-	font-family: $primary-font;
-  font-size: 23px;
-  color: $quaternary-color;
-}
-h3 {
-	font-family: $primary-font;
-  font-size: 18px;
-	color: $quinary-color;
-}
-#yelp-restaurants a {
-	text-decoration: none;
-	font-family: $primary-font;
-	color: $quinary-color;
-}
-
-#foursquare-restaurants a {
-
-	text-decoration: none;
-	font-family: $primary-font;
-	color: $quinary-color;
-}
-#yelp-bars a {
-
-	text-decoration: none;
-	font-family: $primary-font;
-	color: $quinary-color;
-}
-#foursquare-bars a {
-
-	text-decoration: none;
-	font-family: $primary-font;
-	color: $quinary-color;
-}
-
-
-
 
 //=======================NO USER NAVIGATION
 
 nav#nav{
 	min-height: 50px;
+	position: fixed;
+	top: 0;
 	width: 100%;
 	background-color: $nav-color;
+	z-index: 2;
 	img{
 		display: none;
 	}
@@ -172,10 +143,13 @@ nav#nav{
 
 //=======================USER SIGNED IN NAVIGATION
 nav.user-nav{
+	position: fixed;
+	top: 0;
 	width: 100%;
 	background-color: $nav-color;
 	min-height: 50px;
 	font-family: $primary-font;
+	z-index: 2;
 	h2.responsive{
 		display: none;
 	}
@@ -186,7 +160,7 @@ nav.user-nav{
 	h2, a{
 		font-family: $primary-font;
 		font-size: 10pt;
-		color: $tertiary-color;
+		color: $font-color;
 		float: left;
 		margin: 0 50px 0;
 		line-height: 50px;
@@ -203,13 +177,15 @@ nav.user-nav{
 	//===================LOGO
 	h1#nav-logo{
 		font-weight: 700;
-		font-size: 14pt;
+		font-size: 10pt;
 		text-align: center;
-		color: $tertiary-color;
-		margin: 0 auto;
+		color: $font-color;
+		margin: 0 0 0 50px;
 		line-height: 50px;
-		letter-spacing: 5px;
-		float: none;
+		float: left;
+	}
+	h1.responsive{
+		text-align: center;
 	}
 	a#nav-logo-wrapper{
 		float: none;
@@ -224,8 +200,8 @@ nav.user-nav{
 		input[type="submit"]{
 			width: 80px;
 			background: none;
-			border: 1px solid $tertiary-color;
-			color: $tertiary-color;
+			border: 1px solid $font-color;
+			color: $font-color;
 			font-size: 10pt;
 			height: 35px;
 			cursor: pointer;
@@ -260,25 +236,29 @@ body#main-body {
 		display: none;
 	}
 	//============================================HEADER
-	div {
-		width: 50%;
-	    margin: 0 auto;
-	    margin: 85px auto 50px;
+	div#logo-container{
+		overflow: auto;
+		width: 42%;
+		margin: 125px auto 0;
 	}
-	h1 {
+	span {
 		font-size: 48pt;
 		text-align: center;
 		color: $tertiary-color;
 		font-weight: 700;
-		margin: 10px 0;
+		display: block;
 		letter-spacing: 2px;
+		float: left;
+		margin: 0;
+		padding: 0;
+		opacity: 0;
 	}
 	h3#tagline{
 		font-size: 14pt;
 		text-align: center;
 		color: $tertiary-color;
 		letter-spacing: 7px;
-		margin: 0 0 10px;
+		margin: 0 0 50px;
 	}
 	input{
 		border-radius: 5px;
@@ -298,14 +278,14 @@ body#main-body {
 		font-weight: 700;
 		border: none;
 		border-radius: 5px;
-		background: $nav-color;
+		background: $font-color;
 		width: 60%;
 		padding: 0px;
 		height: 40px;
 		outline: none;
 		display: block;
 		float: left;
-		margin: 5px 5% 0 0;
+		margin: 0 5% 0 0;
 	}
 	#neighborhood-button{
 		font-size: 12pt;
@@ -369,7 +349,13 @@ body#main-body {
 			transition: .3s
 		}
 	}
-
+	footer{
+		height: 50px;
+		background-color: $tertiary-color;
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+	}
 }
 
 
@@ -381,7 +367,228 @@ body#main-body {
 /*====================================================
 					NEIGHBORHOOD PAGE
 ======================================================*/
+body#show-body{
+	margin: 0;
+	font-family: $primary-font;
+	background-image: image-url("main-bkg.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	min-height: 100%;
+	nav#nav{
+		width: 39%;
+	}
+	nav.user-nav{
+		width: 39%;
+	}
+	div#head-container{
+		width: 39%;
+		margin:0;
+		background-color: rgba(255,255,255,.7);
+		color: white;
+		position: fixed;
+		top: 50px;
+		left: 0;
+		height: 100%;
 
+		div{
+			background-color: $primary-color;
+			overflow-y: scroll;
+			height: 295px;
+		}
+		div#line{
+			width: 75px;
+			margin: 20px auto;
+			border-top: 1px solid; 
+			height: 5px;
+		}
+		div#info-container{
+			padding: 50px 0;
+		}
+		h1 {
+			font-weight: 900;
+			text-align: center;
+			font-size: 36pt;
+			padding: 10px;
+			margin: 0;
+		}
+		p {
+			text-align: center;
+			font-size: 14pt;
+			padding: 10px;
+		}
+		h3{
+			font: 12pt;
+			text-align: center;
+			color: $font-color;
+			margin: 25px 0 10px;
+		}
+		form{
+			width: 60%;
+			margin: 0 auto;
+			input{
+				height: 40px;
+				border-radius: 5px;
+				padding: 0 3%;
+				font-size: 10pt;
+			}
+			input[type="text"]{
+				width: 61%;
+				border: 1px solid rgb(200,200,200);
+
+			}
+			input[type="submit"]{
+				width: 31%;
+				border: none;
+				background-color: $primary-color;
+				color: white;
+				cursor: pointer;
+			}
+		}
+	}
+	div#content-container{
+		width: 61%;
+		margin: 0;
+		position: fixed;
+		left:39%;
+		top: 0;
+		overflow-y: scroll;
+		background-color: rgba(255,255,255,.7);
+		height: 100%;
+		color: $font-color;
+		a{
+			color: $tertiary-color;
+			text-decoration: none;
+		}
+		a:hover{
+			color: $tertiary-color;
+		}
+		div#logos{
+			width: 61%;
+			position: fixed;
+			right: 0;
+			top: 0;
+			border-radius: 0;
+			z-index: 2;
+			background-color: $primary-color;
+			height: 50px;
+		}
+		img{
+			height: 50px;
+		}
+		div#suggestions-container{
+			position: fixed;
+			bottom: 0;
+			width: 61%;
+			left: 39%;
+			height: 29.2%;
+			background-color: rgba(44,44,44,.7);
+			color: white;
+		}
+		div.list-containers, div.pre-list-containers{
+			width: 100%;
+			overflow: auto;
+
+		}
+		div.list-containers:nth-child(3){
+			border-top: none;
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			height: 100%;
+			position: relative;
+			h2{
+				font-size: 14pt;
+				margin: 10px 0;
+				font-weight: 700;
+				height: 35px;
+			}
+			p{
+				margin: 15px 0 0;
+			}
+			h3{
+				font-size: 10pt;
+				margin: 5px 0 0;
+			}
+			h3.rating{
+				font-weight: 900;
+			}
+		}
+		ul.yelp{
+			width: 50%;
+			float: left;
+			h3.rating{
+				background-color: rgb(209,29,11);	
+				color: white;
+			}
+			a:hover{
+				color: rgb(209,29,11);
+				transition: .3s;
+			}
+		}
+		ul.foursquare{
+			width: 50%;
+			float: right;
+			h3.rating{
+				background-color: rgb(7,50,162);
+				color: white;	
+			}
+			a:hover{
+				color: rgb(7,50,162);
+				transition: .3s;
+			}
+		}
+		li{
+			width: 49%;
+			float: left;
+			text-align: center;
+			padding: 10px 0;
+		}
+		h4{
+			text-align: center;
+			clear: both;
+			width: 100%;
+			color: $tertiary-color;
+			margin: 0 auto;
+			padding: 10px 0;
+			width: 50%;
+			border-bottom:1px solid rgb(240,240,240);
+		}
+		h4:nth-child(2){
+			width: 100%;
+			margin: 50px auto 0;
+			border: none;
+			color: rgb(200,200,200);
+			font-weight: 300;
+			color: $font-color;
+		}
+		div#search-results{
+			height: 360px;
+			overflow-y: scroll;
+			li{
+				width: 100%;
+				float: none;
+				display: block;
+			}
+			ul#yelp-results{
+				li:hover{
+					background-color: rgb(209,29,11);
+					a{color: white;}
+					border-radius: 5px;
+				}
+			}
+			ul#foursquare-results{
+				li:hover{
+					background-color: rgb(7,50,162);
+					a{color: white;}
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+	
+}
 
 
 

@@ -1,73 +1,47 @@
 <body id="show-body">
-	<style type="text/css">
 
-
-
-
-
-		ul{
-			padding: 0;
-			width: 100%;
-			display: block;
-			overflow: auto;
-			list-style: none;
-		}
-
-		li{
-			float: left;
-			width: 25%;
-			text-align: center;
-		}
-
-		li img{
-			display: block;
-			width: 100px;
-			margin: 0 auto;
-		}
-
-		#yelp_logo {
-			width:115px;
-			height:25;
-			float: left;
-		}
-
-		#foursquare_logo {
-			float: right;
-		}
-
-	</style>
-
-	<h1><%= @neighborhood.name %></h1>
-	<h2><%= @neighborhood.description%></h2>
-	<h3><%= @neighborhood.zipcode %></h3>
-
-	<!-- SEARCH BAR -->
-	<form>
-		<input type="text" id="search-field">
-		<input type="submit" id="search-submit">
-	</form>
-
-	<img src="https://s3-media3.fl.yelpcdn.com/assets/2/www/img/65526d1a519b/developers/Powered_By_Yelp_Red.png" alt="Powered by Yelp, red" id= 'yelp_logo'>
-	<img style="-webkit-user-select: none" src="https://ss0.4sqi.net/img/poweredByFoursquare/poweredby-full-color-bf549c16c0ab3e1b04706ab5fcb422f1.png" id= 'foursquare_logo'>
-
-
-
-	<!-- SEARCH RESULTS -->
-	<ul id="yelp-results"></ul>
-
-	<ul id="foursquare-results"></ul>
-
-	<!-- RESTAURANTS -->
-	<ul id="yelp-restaurants"></ul>
-
-	<ul id="foursquare-restaurants"></ul>
-
-	<!-- BARS -->
-	<ul id="yelp-bars"></ul>
-
-	<ul id="foursquare-bars"></ul>
-
-
+	<div id="head-container" class="container">
+		<div id="info-container">
+			<h1 class="fadeInUp" id="neighborhood-name"><%= @neighborhood.name.upcase %></h1>
+			<div id="line"></div>
+			<p class="fadeInDown"><%= @neighborhood.description%></p>
+		
+		</div>
+		<!-- SEARCH BAR -->
+		<h3>What are you in the mood for?</h3>
+		<form>
+			<input type="text" id="search-field">
+			<input type="submit" id="search-submit" value="Search">
+		</form>
+	</div>
+	
+	<div id="content-container" class="container">
+		<div id="logos">
+			<!-- <img src="http://www.darwinaerospace.com/images/yelp.png" alt="Powered by Yelp, red" id= 'yelp-logo'>
+			<img style="-webkit-user-select: none" src="https://ss0.4sqi.net/img/poweredByFoursquare/poweredby-full-color-bf549c16c0ab3e1b04706ab5fcb422f1.png" id= 'foursquare-logo'> -->
+		</div>
+		<!-- SEARCH RESULTS -->
+		
+			<h4 id="search-result-header">Your Search Results</h4>
+			<div class="list-containers" id="search-results">
+				<ul id="yelp-results" class="yelp"></ul>
+				<ul id="foursquare-results" class="foursquare"></ul>
+			</div>
+			<div id="suggestions-container">
+			<!-- RESTAURANTS -->
+			<h4 id="restaurant-header">Recommended Restaurants</h4>
+			<div class="pre-list-containers" id="restaurants">
+				<ul id="yelp-restaurants" class="yelp"></ul>
+				<ul id="foursquare-restaurants" class="foursquare"></ul>
+			</div>
+			<!-- BARS -->
+			<h4 id="bars-header">Recommended Bars</h4>
+			<div class="pre-list-containers" id="bars">
+				<ul id="yelp-bars" class="yelp"></ul>
+				<ul id="foursquare-bars" class="foursquare"></ul>
+			</div>
+		</div>
+	</div>
 
 
 
@@ -82,7 +56,21 @@
 			//=====SUGGESTION AJAX CALLS
 			app.suggestions();
 			app.searchStuff();
+			
+			$('#yelp-results').hide();
+			$('#search-submit').on("click",function(){
+				$('#yelp-results').show();
+			});
+			$('#restaurants').hide();
+			$('#restaurant-header').hide();
+			function slider(){
+				$('#restaurants').fadeToggle( "slow", "linear" );
+				$('#restaurant-header').fadeToggle( "slow", "linear" );
+				$('#bars').fadeToggle( "slow", "linear" );
+				$('#bars-header').fadeToggle( "slow", "linear" );
+			}
 
+			setInterval(slider, 9500)
 
 	// SIGN UP FORM
 			$('#sign-up-form').hide();
@@ -93,7 +81,17 @@
 				$('#sign-in-form').hide();
 				$('#sign-in-cta').show();
 			})
+
+			
+
+
+
+
 		});
+
+
+		
+
 
 	</script>
 

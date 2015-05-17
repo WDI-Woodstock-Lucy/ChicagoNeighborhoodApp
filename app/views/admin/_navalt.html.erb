@@ -1,14 +1,17 @@
 
 <nav class="user-nav">
-	<img id="nav-icon" src="http://www.londonsyonpark.com/images/icon-mobile-nav.png">
-	<%= form_tag('/sessions', method: :delete, :id => "sign-out-form") do %>
-	<%= submit_tag "Sign Out" %>
+	<%= image_tag "menu-icon.png", :id => "nav-icon" %>
+	<%= form_tag('/sessions', method: :delete, :id => "sign-out-form", :class => 'non-responsive') do %>
+	<%= submit_tag "Sign Out", :class => 'non-responsive'%>
 	<% end %>
 	<a href="/profile" class="non-responsive">My Profile</a>
-	<h2 id="nav-username" class="non-responsive"> Welcome, <%=  @current_user.email  %>.</h2>
-	<a href="/neighborhoods" id="nav-logo-wrapper" class="non-responsive"><h1 id="nav-logo">BlockTrotter</h1></a>
-	<h2 class="responsive">My Profile</h2>
-	<h2 class="responsive">Sign Out</h2>
+	<a href="/neighborhoods" id="nav-logo-wrapper" class="non-responsive"><h1 id="nav-logo">BLOCKTROTTER</h1></a>
+	<a href="/neighborhoods" id="nav-logo-wrapper" class="responsive"><h2 id="nav-logo">BLOCKTROTTER</h2></a>
+	<a href="/profile" id="responsive-sign-out" class="responsive"><h2>My Profile</h2></a>
+	<%= form_tag('/sessions', method: :delete, :id => "sign-out-form-responsive", :class => 'responsive') do %>
+	<%= submit_tag "Sign Out", :class => 'responsive'%>
+	<% end %>
+
 </nav>
 
 <script type="text/javascript">

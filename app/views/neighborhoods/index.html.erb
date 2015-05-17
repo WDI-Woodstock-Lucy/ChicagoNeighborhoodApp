@@ -3,11 +3,9 @@
 
 
 
-
-	<div id="main-logo-wrapper">
-		<h1>BLOCKTROTTER</h1>
-		<h3 id="tagline">A guide to Chicago neighborhoods.</h3>
-	</div>
+	<div id="logo-container"></div>
+		<h1 class="fadeInUp" id="logo-name">BLOCKTROTTER</h1>
+		<h3 id="tagline" class="fadeInDown">A guide to Chicago neighborhoods.</h3>
 
 	<!-- NEIGHBORHOOD SELECTOR -->
 	<%= form_tag('/neighborhoods/show', method: :get) do %>
@@ -26,6 +24,7 @@
 	  <%= f.submit "Sign Up"%>
 	<% end %>
 
+	<footer></footer>
 
 
 
@@ -43,6 +42,15 @@
 			});
 
 
+			//Fade IN EFFECT
+			$('#logo-name').hide()
+			var name = $('#logo-name').text();
+			var arrayName = name.split("");
+			for(var i = 0; i < arrayName.length; i++){
+				var letter = $('<span>').text(arrayName[i]).addClass('letter'+i);
+				$(letter).addClass('fadeInUp');
+				$('#logo-container').append(letter);
+			}
 
 			//FORM VALIDATION
 

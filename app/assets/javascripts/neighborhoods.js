@@ -21,14 +21,14 @@ app.renderFoursquareSugg = function(data){
 	var header = $('<h2>').text(data.venue.name);
 	var address = $('<p>').text(data.venue.location.address);
 	var phone = $('<h3>').text(data.venue.contact.formattedPhone);
-	var rating = $('<h4>').text(data.venue.rating);
+	var rating = $('<h3>').text('Rating: ' + data.venue.rating + ' / 10').addClass('rating');
 
 	$(container).append($(header));
 	$(container).append($(address));
 	$(container).append($(phone));
 	$(container).append($(rating));
 	$(link).html($(container).html());
-	$(listItem).append($(link));
+	$(listItem).append($(link)).addClass('fadeInDown');
 	return listItem;
 };
 
@@ -39,15 +39,15 @@ app.renderYelpSugg = function(data){
 	var container = $('<div>').addClass("suggestion");
 	var header = $('<h2>').text(data.hash.name);
 	var address = $('<p>').text(data.hash.location.address[0]);
-	var phone = $('<h3>').text(data.hash.phone);
-	var rating = $('<h4>').text(data.hash.rating);
+	var phone = $('<h3>').text(data.hash.display_phone);
+	var rating = $('<h3>').text('Rating: ' +data.hash.rating + " / 5").addClass('rating');
 
 	$(container).append($(header));
 	$(container).append($(address));
 	$(container).append($(phone));
 	$(container).append($(rating));
 	$(link).html($(container).html());
-	$(listItem).append($(link));
+	$(listItem).append($(link)).addClass('fadeInDown');;
 	return listItem;
 };
 
@@ -142,7 +142,8 @@ app.suggestions = function (){
 app.searchStuff = function(){
 	$('#search-submit').click(function(evt){
 		evt.preventDefault();
-		$('#search-result').empty();
+		$('#yelp-results').empty();
+		$('#foursquare-results').empty();
 		var clientKey = 'PFZGPZCMEIYOB1CLDVEFJXN2BBQP3CTLPDOJEMR1JPQ2A1TL';
 		var clientSecret = 'WRENZBLZL5DQK3NEOGALJ1K4J0YQRE4EXHGYHDWJNAG0QEVC';
 		var location = app.neighborhoodZip;
@@ -154,15 +155,17 @@ app.searchStuff = function(){
 		//======================================================
 		$.ajax({
 			method: 'get',
-			url: 'https://api.foursquare.com/v2/venues/explore?client_id='+clientKey+'&client_secret='+clientSecret+'&v=20130815&near='+location+'&query='+searchTerm+'&limit=2',
+			url: 'https://api.foursquare.com/v2/venues/explore?client_id='+clientKey+'&client_secret='+clientSecret+'&v=20130815&near='+location+'&query='+searchTerm+'&limit=6',
 			dataType: 'json',
 			success: function(data){
 				console.log(data);
 				var data = data.response.groups[0].items;
-				var result1 = data[0];
-				var result2 = data[1];
-				$('#foursquare-results').append(app.renderFoursquareSugg(result1));
-				$('#foursquare-results').append(app.renderFoursquareSugg(result2));
+				for(var i = 0; i < 6; i++){
+					//if(data.venue.rating.parseFloat() >= 9){
+						var result = data[i];
+						$('#foursquare-results').append(app.renderFoursquareSugg(result));
+					//}
+				};
 			}
 		});
 

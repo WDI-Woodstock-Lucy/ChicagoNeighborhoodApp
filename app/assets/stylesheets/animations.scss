@@ -1,1 +1,139 @@
 
+// ==========================
+// 		FADE IN UP
+// ==========================
+@-webkit-keyframes fadeInUp{
+	0%{
+		opacity: 0;
+		-webkit-transform: translate3d(0,-25px,0);
+	}
+	100%{
+		opacity: 1;
+		-webkit-transform: translate3d(0,0,0);
+	}
+}
+
+@keyframes fadeInUp{
+	0%{
+		opacity: 0;
+		transform: translate3d(0,-25px,0);
+	}
+	100%{
+		opacity: 1;
+		transform: translate3d(0,0,0);
+	}
+}
+
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fadeIn;
+	animation-duration: 1.5s;
+}
+
+.letter0{
+	-webkit-animation-delay: 0;
+	animation-delay: 0;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards
+}
+.letter1{
+	-webkit-animation-delay: .1s;
+	animation-delay: .1s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards
+}
+.letter2{
+	-webkit-animation-delay: .2s;
+	animation-delay: .2s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards
+}
+.letter3{
+	-webkit-animation-delay: .3s;
+	animation-delay: .3s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards
+}
+.letter4{
+	-webkit-animation-delay: .4s;
+	animation-delay: .4s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards
+}
+.letter5{
+	-webkit-animation-delay: .5s;
+	animation-delay: .5s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards
+}
+.letter6{
+	-webkit-animation-delay: .6s;
+	animation-delay: .6s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards
+}
+.letter7{
+	-webkit-animation-delay: .7s;
+	animation-delay: .7s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards
+}
+.letter8{
+	-webkit-animation-delay: .8s;
+	animation-delay: .8s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards
+}
+.letter9{
+
+	-webkit-animation-delay: .9s;
+	animation-delay: .9s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards
+}
+.letter10{
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards
+}
+.letter11{
+	-webkit-animation-delay: 1.1s;
+	animation-delay: 1.1s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards
+}
+
+
+// ==========================
+// 		FADE IN DOWN
+// ==========================
+@-webkit-keyframes fadeInDown{
+	0%{
+		opacity: 0;
+		-webkit-transform: translate3d(0,25px,0);
+	}
+	100%{
+		opacity: 1;
+		-webkit-transform: translate3d(0,0,0);
+	}
+}
+
+@keyframes fadeInDown{
+	0%{
+		opacity: 0;
+		transform: translate3d(0,25px,0);
+	}
+	100%{
+		opacity: 1;
+		transform: translate3d(0,0,0);
+	}
+}
+
+.fadeInDown {
+	-webkit-animation-name: fadeInDown;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fadeIn;
+	animation-duration: 1.5s;
+}

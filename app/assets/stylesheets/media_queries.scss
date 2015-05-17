@@ -1,9 +1,15 @@
 $primary-font: 'Lato', sans-serif;
+$secondary-font: 'Grand Hotel', serif;
+
 //COLORS
 $primary-color: rgb(102,203,255);
-// $secondary-color: ;
+$secondary-color: rgb(203,15,41);
+$font-color: rgb(44,44,44);
 $tertiary-color: rgb(255,255,255);
-$accept-color: rgb(89,193,114); 
+$quaternary-color: rgba(0,0,0,0.7);
+$quinary-color: rgba(40,40,40,0.8);
+$accept-color: rgb(89,193,114);
+$nav-color: rgba(255,255,255,.7);
 
 // ==================================
 // 960 PIXELS
@@ -67,7 +73,7 @@ $accept-color: rgb(89,193,114);
 			font-size: 12pt;
 			text-align: center;
 			color: $tertiary-color;
-			border-top: 1px solid $tertiary-color;
+			border-top: 1px solid $font-color;
 			padding: 15px 0;
 			margin: 0;
 			cursor: pointer;
@@ -117,7 +123,7 @@ $accept-color: rgb(89,193,114);
 		.non-responsive{
 			display: none;
 		}
-		input[type="submit"]{
+		input[type="submit"].non-responsive{
 			display: none;
 		}
 		a{
@@ -127,23 +133,44 @@ $accept-color: rgb(89,193,114);
 		a#nav-logo-wrapper{
 			display: none;
 		}
+		a#responsive-sign-out{
+			line-height: 0;
+		}
 		.responsive{
 			display: block;
 			cursor: pointer;
 			float: none;
 			margin: 0;
 		}
-		h2{
+		form#sign-out-form-responsive{
+			display: block;
+			float: none;
+			margin: 0 auto;
+			padding: 10px 0;
+			border-top: 1px solid $font-color;
+			font-size: 12pt;
+		}
+		h2, input[type="submit"].responsive{
 			display: block;
 			font-family: $primary-font;
 			font-size: 12pt;
 			text-align: center;
-			color: $tertiary-color;
-			border-top: 1px solid $tertiary-color;
+			color: $font-color;
+			border-top: 1px solid $font-color;
 			padding: 15px 0;
 			margin: 0;
 			cursor: pointer;
 			float: none;
+			background: none;
+		}
+		input[type="submit"].responsive{
+			margin: 0 auto;
+			border: none;
+			font-size: 12pt;
+			display: block;
+		}
+		input[type="submit"].responsive:hover{
+			color: $primary-color;
 		}
 		h2:hover{
 			color: $primary-color;
@@ -159,7 +186,11 @@ $accept-color: rgb(89,193,114);
 	body#main-body{
 		//=====================================NAVIGATION
 		h1{
-			font-size: 48pt;
+			font-size: 36pt;
+		}
+		h3#tagline{
+			font-size: 12pt;
+			letter-spacing: 5px;
 		}
 		//============================NEIGHBORHOOD FORM
 		form{
@@ -198,7 +229,10 @@ $accept-color: rgb(89,193,114);
 	// ==================================
 	body#main-body{
 		h1 {
-			font-size: 36pt;
+			font-size: 30pt;
+		}
+		h3#tagline{
+			letter-spacing: 4px;
 		}
 		select{
 			float: none;
@@ -216,6 +250,9 @@ $accept-color: rgb(89,193,114);
 			.sign-up-field{
 				width: 45%;
 			}
+		}
+		footer{
+			height: 20px;
 		}
 	}
 	
