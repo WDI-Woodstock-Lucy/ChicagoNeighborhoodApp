@@ -1,5 +1,6 @@
-# ChicagoNeighborhoodApp
-Application to discover and explore the neighborhoods of Chicago.
+# BlockTrotter - A guide to Chicago neighborhoods
+
+![BlockTrotter_logo](/blockTrotter_logo.png)
 
 User Stories
 
