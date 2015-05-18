@@ -4,8 +4,8 @@
 
 
 
-  <p id="edit-form">Update your email or password</p>
-  <p id="edit-form-note">Please Note: Your information cannot be updated unless you fill out both forms with the new email and old password or vice versa.</p>
+  <p id="edit-form">Update your email or password.</p>
+ 
 
   <div id="profile-update-form">
   <%= form_for @user do |f| %>
@@ -13,9 +13,13 @@
     <%= f.text_field :email%>
     <%= f.label :password %>
     <%= f.password_field :password%>
-    <%= f.submit  id: 'edit-button' %>
+    <%= f.submit  'Update', id: 'edit-button' %>
   <% end %>
   </div>
+
+ <p id="edit-form-note">Please Note: Your information cannot be updated unless you fill out both forms with the new email and old password or vice versa.</p>
+
+  <footer></footer>
 
   <script type="text/javascript">
 

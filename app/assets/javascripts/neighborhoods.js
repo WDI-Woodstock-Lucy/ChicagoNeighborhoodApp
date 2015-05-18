@@ -155,12 +155,12 @@ app.searchStuff = function(){
 		//======================================================
 		$.ajax({
 			method: 'get',
-			url: 'https://api.foursquare.com/v2/venues/explore?client_id='+clientKey+'&client_secret='+clientSecret+'&v=20130815&near='+location+'&query='+searchTerm+'&limit=6',
+			url: 'https://api.foursquare.com/v2/venues/explore?client_id='+clientKey+'&client_secret='+clientSecret+'&v=20130815&near='+location+'&query='+searchTerm+'&limit=2',
 			dataType: 'json',
 			success: function(data){
 				console.log(data);
 				var data = data.response.groups[0].items;
-				for(var i = 0; i < 6; i++){
+				for(var i = 0; i < 2; i++){
 					//if(data.venue.rating.parseFloat() >= 9){
 						var result = data[i];
 						$('#foursquare-results').append(app.renderFoursquareSugg(result));

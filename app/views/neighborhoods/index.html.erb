@@ -3,7 +3,7 @@
 
 
 
-	<div id="logo-container"></div>
+
 		<h1 class="fadeInUp" id="logo-name">BLOCKTROTTER</h1>
 		<h3 id="tagline" class="fadeInDown">A guide to Chicago neighborhoods.</h3>
 
@@ -42,15 +42,15 @@
 			});
 
 
-			//Fade IN EFFECT
-			$('#logo-name').hide()
-			var name = $('#logo-name').text();
-			var arrayName = name.split("");
-			for(var i = 0; i < arrayName.length; i++){
-				var letter = $('<span>').text(arrayName[i]).addClass('letter'+i);
-				$(letter).addClass('fadeInUp');
-				$('#logo-container').append(letter);
-			}
+			// //Fade IN EFFECT
+			// $('#logo-name').hide()
+			// var name = $('#logo-name').text();
+			// var arrayName = name.split("");
+			// for(var i = 0; i < arrayName.length; i++){
+			// 	var letter = $('<span>').text(arrayName[i]).addClass('letter'+i);
+			// 	$(letter).addClass('fadeInUp');
+			// 	$('#logo-container').append(letter);
+			// }
 
 			//FORM VALIDATION
 
