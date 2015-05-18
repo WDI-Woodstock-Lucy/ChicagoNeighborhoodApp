@@ -11,8 +11,9 @@ Blocktrotter pulls data from the [Foursquare](https://developer.foursquare.com/)
 Our homepage allows site visitors to use the app without signing in. However, users can sign up and sign in from the homepage. The act of signing up also immediately signs in a user.
 
 ![homepage](github_images/homepage.png)
+`root 'neighborhoods#index'`
 
-##Nieghborhoods
+##Neighborhoods
 Selecting a neighborhood brings users to a Neighborhoods page, which provides them with a rotation of 4 restaurants (2 from Yelp on the left, 2 from foursquare on the right) and 4 bars (2 from Yelp, 2 from foursquare) in the lower right corner of the page.
 
 ![neighborhoods](github_images/neighborhoods.png)
