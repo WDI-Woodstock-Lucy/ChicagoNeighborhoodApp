@@ -21,7 +21,7 @@ $font-color: rgb(44,44,44);
 $tertiary-color: rgb(255,255,255);
 $quaternary-color: rgba(0,0,0,0.7);
 $quinary-color: rgba(40,40,40,0.8);
-$accept-color: rgb(89,193,114);
+$accept-color: #CB6928;
 $nav-color: rgb(255,255,255);
 
 
@@ -50,6 +50,7 @@ nav#nav{
 	input[type='text'], input[type='password']{
 		border: none;
 		background-color: rgba(255,255,255,.7);
+		border: 1px solid rgb(200,200,200);
 		display: block;
 		height: 25px;
 		margin-right: 1%;
@@ -60,8 +61,8 @@ nav#nav{
 	//===================SUBMIT BUTTONS
 	input[type='submit']{
 		background: none;
-		border: 1px solid $tertiary-color;
-		color: $tertiary-color;
+		border: 1px solid rgb(200,200,200);
+		color: $font-color;
 		margin: 0 auto;
 		height: 35px;
 		width: 22%;
@@ -76,7 +77,7 @@ nav#nav{
 	h3{
 		font-family: $primary-font;
 		font-size: 12pt;
-		color: $tertiary-color;
+		color: $font-color;
 		float: right;
 		margin: 0 50px 0 0;
 		line-height: 50px;
@@ -95,7 +96,7 @@ nav#nav{
 		font-weight: 700;
 		font-size: 14pt;
 		text-align: center;
-		color: $tertiary-color;
+		color: $font-color;
 		margin: 0 auto;
 		line-height: 50px;
 		letter-spacing: 5px;
@@ -108,7 +109,7 @@ nav#nav{
 	}
 	//===================SIGN IN FORM
 	form#sign-in-form{
-		width: 35%;
+		width: 40%;
 		float: right;
 		margin-top: 7px;
 		input{
@@ -123,7 +124,7 @@ nav#nav{
 		}
 	}
 	form#sign-up-form{
-		width: 35%;
+		width: 40%;
 		float: right;
 		margin-top: 7px;
 		input{
@@ -236,22 +237,16 @@ body#main-body {
 		display: none;
 	}
 	//============================================HEADER
-	div#logo-container{
+
+	h1 {
 		overflow: auto;
-		width: 42%;
-		margin: 125px auto 0;
-	}
-	span {
+		margin: 125px 0 0;
 		font-size: 48pt;
 		text-align: center;
 		color: $tertiary-color;
 		font-weight: 700;
 		display: block;
 		letter-spacing: 2px;
-		float: left;
-		margin: 0;
-		padding: 0;
-		opacity: 0;
 	}
 	h3#tagline{
 		font-size: 14pt;
@@ -462,19 +457,6 @@ body#show-body{
 		a:hover{
 			color: $tertiary-color;
 		}
-		div#logos{
-			width: 61%;
-			position: fixed;
-			right: 0;
-			top: 0;
-			border-radius: 0;
-			z-index: 2;
-			background-color: $primary-color;
-			height: 50px;
-		}
-		img{
-			height: 50px;
-		}
 		div#suggestions-container{
 			position: fixed;
 			bottom: 0;
@@ -548,41 +530,60 @@ body#show-body{
 		h4{
 			text-align: center;
 			clear: both;
-			width: 100%;
 			color: $tertiary-color;
 			margin: 0 auto;
 			padding: 10px 0;
 			width: 50%;
 			border-bottom:1px solid rgb(240,240,240);
 		}
-		h4:nth-child(2){
+		h4#search-result-header{
 			width: 100%;
-			margin: 50px auto 0;
+			margin: 0 auto;
 			border: none;
+			height: 30px;
+			line-height: 30px;
 			color: rgb(200,200,200);
-			font-weight: 300;
-			color: $font-color;
+			color: $tertiary-color;
+			background-color: $primary-color;
 		}
 		div#search-results{
 			height: 360px;
 			overflow-y: scroll;
+			img{
+				height: 25px;
+				margin: 10px 15px;
+			}
+			img#yelp-logo{
+				float: left;
+			}
+			img#foursquare-logo{
+				float: right;
+			}
+			a{
+				color: $font-color;
+			}
 			li{
 				width: 100%;
 				float: none;
 				display: block;
 			}
+			ul.yelp, ul.foursquare{
+				clear: both;
+			}
 			ul#yelp-results{
 				li:hover{
-					background-color: rgb(209,29,11);
-					a{color: white;}
+					a{color: rgb(209,29,11);}
 					border-radius: 5px;
+					transition: .3s;
 				}
 			}
 			ul#foursquare-results{
+				display: inline-block;
+				float: none;
 				li:hover{
-					background-color: rgb(7,50,162);
-					a{color: white;}
+					a{color: rgb(7,50,162);}
 					border-radius: 5px;
+					transition: .3s;
 				}
 			}
 		}
@@ -590,7 +591,63 @@ body#show-body{
 	
 }
 
+body#profile-body{
+	margin: 0;
+	background-color: $primary-color;
+	font-family: $primary-font;
+	footer{
+		height: 50px;
+		background-color: $tertiary-color;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
 
+	h1{
+		font-size: 36pt;
+		margin: 125px 0 25px;
+		text-align: center;
+		font-weight: 900;
+	}
+	p{
+		text-align: center;
+		width: 50%;
+		margin: 15px auto;
+	}
+	form{
+		display: block;
+		width: 65%;
+		margin: 0 auto;
+		label{
+			text-align: center;
+			display: block;
+			margin-bottom: 5px;
+		}
+		input{
+			height: 30px;
+			font-size: 12pt;
+			display: block;
+			width: 25%;
+			margin: 0 auto 15px;
+			border-radius: 5px;
+			border: none;
+			padding: 5px;
+		}
+		input[type="submit"]{
+			width: 15%;
+			background: none;
+			border: 1px solid white;
+			padding: 5px;
+			color: white;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover{
+			transition: .3s;
+			border-color: $accept-color;
+			color: $accept-color;
+		}
+	}
+}
 
 
 

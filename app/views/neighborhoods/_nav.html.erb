@@ -2,13 +2,13 @@
 <nav id="nav">
 
 	<!-- RESPONSIVE ITEMS -->
-	<img id="nav-icon" src="http://www.londonsyonpark.com/images/icon-mobile-nav.png">
+	<%= image_tag "menu-icon.png", :id => "nav-icon" %>
 
 	<!-- NAV SIGN IN FORM FULL SCREEN-->
 	<h3 id="sign-in-cta">Sign In</h3>
 	<!-- LOG IN FORM -->
 	<h2 class="responsive-nav">Sign In</h2>
-	<%= form_tag('sessions', method: :post, :id => 'sign-in-form') do |f| %>
+	<%= form_tag('/sessions', method: :post, :id => 'sign-in-form') do |f| %>
 	  <%= text_field_tag :email, nil, placeholder: "Email...", class: 'sign-in-field' %>
 	  <%= password_field_tag :password, nil, placeholder: "Password...", class: 'sign-in-field'%>
 	  <%= submit_tag 'Submit', :id => 'sign-in-button'%>
@@ -56,6 +56,14 @@
 					$('#sign-up-form').hide();
 				}
 			});
+
+			function formResize(){
+				if($('#nav').width() <= 500){
+					$('#sign-in-form').css("width", "55%");
+				};
+			};
+
+			formResize();
 
 			$('.responsive-nav').on("click", function(evt){
 				evt.preventDefault();

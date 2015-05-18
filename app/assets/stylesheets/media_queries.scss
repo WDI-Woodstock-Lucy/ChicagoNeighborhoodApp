@@ -30,7 +30,28 @@ $nav-color: rgba(255,255,255,.7);
 			width: 70%;
 		}
 	}
-	
+	body#show-body{
+		nav#nav{
+			width: 100%;
+		}
+		nav.user-nav{
+			width: 100%;
+		}
+		div#head-container{
+			position: static;
+			width: 100%;
+			padding: 10px 0 50px;
+		}
+		div#content-container{
+			position: static;
+			width: 100%;
+			div#suggestions-container{
+			position: static;
+			width: 100%;
+		}
+		}
+
+	}
 
 
 }
@@ -72,7 +93,7 @@ $nav-color: rgba(255,255,255,.7);
 			font-family: $primary-font;
 			font-size: 12pt;
 			text-align: center;
-			color: $tertiary-color;
+			color: $font-color;
 			border-top: 1px solid $font-color;
 			padding: 15px 0;
 			margin: 0;
@@ -217,6 +238,15 @@ $nav-color: rgba(255,255,255,.7);
 			width: 100%;
 		}
 	}
+
+	body#profile-body{
+		form{
+			width: 100%;
+		}
+		.non-responsive{
+			display: none;
+		}
+	}
 }
 
 // ==================================
@@ -255,7 +285,31 @@ $nav-color: rgba(255,255,255,.7);
 			height: 20px;
 		}
 	}
+
+	body#show-body{
+		div#content-container{
+			div#suggestions-container{
+				ul{
+					width: 100%;
+					display: block;
+				}
+				ul.foursquare{
+					float: none;
+					display: block;
+					width: 100%;
+				}
+			}
+		} 
+	}
 	
+
+	body#profile-body{
+		form{
+			input{
+				width: 65%;
+			}
+		}
+	}
 
 
 }
