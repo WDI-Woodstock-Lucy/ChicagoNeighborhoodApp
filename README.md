@@ -12,8 +12,12 @@ Our homepage allows site visitors to use the app without signing in. However, us
 
 ![homepage](github_images/homepage.png)
 
+##Nieghborhoods
+Selecting a neighborhood brings users to a Neighborhoods page, which provides them with a rotation of 4 restaurants (2 from Yelp, 2 from foursquare) and 4 bars (2 from Yelp, 2 from foursquare)
 
 ![neighborhoods](github_images/neighborhoods.png)
+
+![search](github_images/search.png)
 
 
 
