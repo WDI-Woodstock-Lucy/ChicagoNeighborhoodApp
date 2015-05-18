@@ -1,5 +1,7 @@
 # BlockTrotter - A guide to Chicago neighborhoods
 
+/play sexyback
+
 ![blocktrotter_logo](github_images/blocktrotter_logo.png)
 
 ##Synopsis
