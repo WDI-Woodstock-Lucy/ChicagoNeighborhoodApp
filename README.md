@@ -29,6 +29,11 @@ Clicking on any of the results links the user to the corresponding Yelp or fours
 ![Users](github_images/user.png)
 
 
+##Admin
+![Admin](github_images/admin.png)
+
+
+
 User Stories
 
 Jake
