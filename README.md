@@ -1,6 +1,6 @@
 # BlockTrotter - A guide to Chicago neighborhoods
 
-:bowtie: :100: :zap: :beers: :cocktail: :pizza: :hamburger: :thumbsup: :trollface:
+:bowtie: :100: :zap: :beers: :sunglasses: :cocktail: :pizza: :hamburger: :thumbsup: :trollface: :satisfied:
 
 ![blocktrotter_logo](github_images/blocktrotter_logo.png)
 
