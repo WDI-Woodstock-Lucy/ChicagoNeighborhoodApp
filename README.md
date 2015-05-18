@@ -1,6 +1,6 @@
 # BlockTrotter - A guide to Chicago neighborhoods
 
-:bowtie:
+:bowtie: :100:
 
 ![blocktrotter_logo](github_images/blocktrotter_logo.png)
 
