@@ -1,64 +1,33 @@
-# ChicagoNeighborhoodApp
-Application to discover and explore the neighborhoods of Chicago.
+# BlockTrotter - A guide to Chicago neighborhoods
 
-User Stories
+![blocktrotter_logo](github_images/blocktrotter_logo.png)
 
-Jake
-USER ACCOUNTS
-User can sign up for a new account.
-User can log into their account.
+##Synopsis
+Blocktrotter is a application (using Rails and Javascript) that helps visitors and residents better explore some of the dozens of neighborhoods in the city of Chicago. With Yelp and Foursquare recommendations, Blocktrotter gives users the best options for their trip.
 
-NEIGHBORHOOD SEARCH
-User can search for a neighborhood in Chicago.
-User can select a neighborhood from a list of neighborhoods (for those who are unfamiliar with the neighborhoods).
+##Using Multiple APIs
+Blocktrotter pulls data from the [Foursquare](https://developer.foursquare.com/) & [Yelp](https://www.yelp.com/developers/documentation) (actually using the [Yelp Gem](https://github.com/Yelp/yelp-ruby)) APIs, as well as a database of Chicago neighborhoods to provide users with restaurant and bar suggestions within a selected area.
 
-NEIGHBORHOOD PAGE
-User can read general information about the neighborhood.
-Top restaurants, club, bars, etc.
-Events going on?
-User can search for specific places within each neighborhood.
-User can select a place to see more details.
-Location
-Reviews
-User can access location on google maps.
+Our homepage allows site visitors to use the app without signing in. However, users can sign up and sign in from the homepage. The act of signing up also immediately signs in a user.
 
-James
-Authentication
-User can sign in/sign out, log-in/log-out
-Admin can sign in/sign out, log-in/log-out
+![homepage](github_images/homepage.png)
+`root 'neighborhoods#index'`
 
-Index Page
-User can select Chicago neighborhood
-User can read brief information about neighborhood (walkability, history, etc.)
-User can select (maybe search?) for thing they want to do and get results
-User can view Yelp and Foursquare ratings of those results
+##Neighborhoods
+Selecting a neighborhood brings users to a Neighborhoods page, which provides them with a rotation of 4 restaurants (2 from Yelp on the left, 2 from foursquare on the right) and 4 bars (2 from Yelp, 2 from foursquare) in the lower right corner of the page.
 
-Edit
-Admin
+![neighborhoods](github_images/neighborhoods.png)
 
-New
-Admin can add new location that is not yet on yelp/foursquare
+Using our search bar provides the user with additional options, which appear in the upper right side. We remain consistent with Yelp data on the left, foursquare data on the right.
 
-Show Page
-User can select one of those results for more information
-User can see where results are on neighborhood map
-User can view closest public transportation locations
+![search](github_images/search.png)
 
-Destroy
-Admin can delete … stuff? Maybe this shouldn’t exst.
+Clicking on any of the results links the user to the corresponding Yelp or foursquare page.
 
-Update
-Logged-in user can leave their own review/score
+##Users
 
-User Stories - Julia C
+![Users](github_images/user.png)
 
-The user can sign up.
-The user can log in.
-The user can log out.
-The user can search by neighborhood or zip code in the city of Chicago.
-The user can toggle by time of day to zone in on types of services available.
-The user can search by term for activities of interest.
 
-Home Wireframe
-![home_wireframe](/home_wireframe.png)
-![results_page](/Results_page.png)
+##Admin
+![Admin](github_images/admin.png)
