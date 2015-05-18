@@ -649,6 +649,25 @@ body#profile-body{
 	}
 }
 
+body#admin-body{
+	margin: 0;
+	background-color: $primary-color;
+	font-family: $primary-font;
+	footer{
+		height: 50px;
+		background-color: $tertiary-color;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
+
+	h1{
+		font-size: 36pt;
+		margin: 125px 0 25px;
+		text-align: center;
+		font-weight: 900;
+	}
+}
 
 
 
