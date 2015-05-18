@@ -13,7 +13,7 @@ Our homepage allows site visitors to use the app without signing in. However, us
 ![homepage](github_images/homepage.png)
 
 
-
+![neighborhoods](github_images/neighborhoods.png)
 
 
 
