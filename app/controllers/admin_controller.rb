@@ -8,4 +8,15 @@ class AdminController < ApplicationController
     @neighborhoods = Neighborhood.all
   end
 
+  def update
+    neighborhood = Neighborhood.find(params[:id])
+    neighborhood.update!(neighborhood_params)
+    redirect_to '/admin'
+  end
+
+  private
+  def neighborhood_params
+    params.require(:neighborhood).permit(:name, :description, :zipcode)
+  end
+
 end

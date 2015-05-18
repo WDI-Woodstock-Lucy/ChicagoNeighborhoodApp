@@ -40,11 +40,7 @@ class NeighborhoodsController < ApplicationController
     render json: @results
   end
 
-  def update
-    neighborhood = Neighborhood.find(params[:id])
-    neighborhood.update!(neighborhood_params)
-    redirect_to '/admin'
-  end
+  
 
   def destroy
     Neighborhood.destroy(params[:id])
