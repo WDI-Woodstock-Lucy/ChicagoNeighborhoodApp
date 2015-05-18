@@ -28,12 +28,7 @@ Clicking on any of the results links the user to the corresponding Yelp or fours
 
 ##Users
 ![Users](github_images/user_update.png)
-Currently our Users page allows a user to edit his or her email address and password. We use Javascript to disable the update button unless a user has added a 6-character password. The password field also changes from red to green when a user has inserted the 6th character
-
-![Password_red](github_images/password_red.png)
-_update not yet allowed_
-![Password_green](github_images/password_green.png)
-_update now allowed_
+Currently our Users page allows a user to edit his or her email address and password.
 
 In future iterations of this site we look forward to allowing users to "favorite" certain businesses and potentially leave reviews of their own.
 
